@@ -1,0 +1,6 @@
+[user]
+	name = Robert James Hernandez
+        email = rob@sarcasticadmin.com
+[core]
+	editor = vim
+        pager = less

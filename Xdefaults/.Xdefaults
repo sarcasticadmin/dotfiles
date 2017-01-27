@@ -1,0 +1,22 @@
+Xcursor.size: 24
+
+#URxvt*geometry:         112x22  
+#Rxvt*font:            xft:System San Francisco Display:size=15
+#Rxvt*font:            xft:Bitstream Vera Sans Mono:size=15
+#URxvt*font:            xft:monaco:size=15
+#URxvt.letterSpace: -1
+!urxvt color scheme:
+
+#URxvt*background: #2B2B2B
+URxvt*background: #000000
+#URxvt*foreground: #DEDEDE
+URxvt*foreground: #ffffff
+
+URxvt.font:     xft:Ubuntu Mono:size=16:antialias=true
+URxvt.boldFont: xft:Ubuntu Mono:bold:size=16:antialias=true
+URxvt*urlLauncher:         firefox  
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:        true
+URxvt*scrollColor:        #000000
+URxvt.termName: rxvt-unicode-256color
+URxvt.color12: rgb:5c/5c/ff
