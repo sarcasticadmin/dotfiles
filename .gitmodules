@@ -1,0 +1,12 @@
+[submodule "vim/.vim/bundle/salt"]
+	path = vim/.vim/bundle/salt
+	url = https://github.com/saltstack/salt-vim.git
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "vim/.vim/bundle/markdown"]
+	path = vim/.vim/bundle/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/.vim/bundle/terraform"]
+	path = vim/.vim/bundle/terraform
+	url = https://github.com/hashivim/vim-terraform.git
