@@ -3,4 +3,4 @@
         email = rob@sarcasticadmin.com
 [core]
 	editor = vim
-        pager = less
+        pager = less -R
