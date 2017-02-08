@@ -1,0 +1,4 @@
+# Enabling things in my ~/.bashrc
+# 0 == Enabled
+# 1 == Disabled
+ENABLE_GPG=0
