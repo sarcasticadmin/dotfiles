@@ -23,6 +23,7 @@ shopt -s checkwinsize
 # Aliases
 alias ll="ls -lah"
 alias tmux="tmux -2"
+alias diff="diff -u"
 
 # Save my sanity from long dirs
 if [[ -d "$HOME/symlinks" ]]; then
