@@ -1,8 +1,21 @@
-https://news.ycombinator.com/rss tech
-http://lifehacker.com/rss
-https://hackaday.com/blog/feed/  tech
-http://www.anandtech.com/rss/ tech
-http://feeds.arstechnica.com/arstechnica/index
-http://feeds.feedburner.com/FreeBSDNewscom tech freebsd
-https://blog.shiftyjelly.com/feed/ tech podcast
-http://feeds.feedburner.com/realclearpolitics/qlMj politics
+# URLs
+https://news.ycombinator.com/rss tech "!Hacker News"
+http://lifehacker.com/rss tech "!Lifehacker"
+https://hackaday.com/blog/feed/ tech "!Hackaday"
+http://www.anandtech.com/rss/ tech "!Anandtech"
+http://feeds.arstechnica.com/arstechnica/index tech "!Ars Technica"
+http://feeds.feedburner.com/FreeBSDNewscom tech freebsd "!FreeBSDnews.com"
+http://feeds.feedburner.com/realclearpolitics/qlMj politics "!Real Clear Politics"
+https://blog.shiftyjelly.com/feed/ tech apps podcast "!Podcasts"
+https://www.freebsd.org/news/rss.xml tech freebsd "!FreeBSD.org"
+https://blog.pfsense.org/?cat=57&feed=rss2 tech freebsd "!PFSense.org"
+http://feeds.feedburner.com/FreebsdFoundation tech freebsd "!FreeBSD Foundation"
+https://www.trueos.org/feed/ tech freebsd "!TrueOS.org"
+http://xkcd.com/rss.xml comics "!xkcd"
+http://feed.dilbert.com/dilbert/daily_strip comics "!Dilbert"
+
+# Query Aggregators
+"query:Tech News:tags # \"tech\""
+"query:FreeBSD News:tags # \"freebsd\""
+"query:Comics:tags # \"comics\""
+"query:Political News:tags # \"politics\""
