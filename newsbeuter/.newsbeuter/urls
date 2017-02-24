@@ -15,6 +15,7 @@ http://xkcd.com/rss.xml comics "!xkcd"
 http://feed.dilbert.com/dilbert/daily_strip comics "!Dilbert"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
+http://www.commitstrip.com/en/feed/ comics "!CommitStrip"
 
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
