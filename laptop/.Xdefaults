@@ -20,3 +20,9 @@ URxvt*scrollBar_right:        true
 URxvt*scrollColor:        #000000
 URxvt.termName: rxvt-unicode-256color
 URxvt.color12: rgb:5c/5c/ff
+
+# xterm
+xterm*background: #000000
+xterm*foreground: #ffffff
+xterm*font: 7x13
+xterm*faceName: xft:Ubuntu Mono:size=12:antialias=true
