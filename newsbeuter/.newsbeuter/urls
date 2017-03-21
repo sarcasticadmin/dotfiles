@@ -17,9 +17,12 @@ http://feed.dilbert.com/dilbert/daily_strip comics "!Dilbert"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
 http://www.commitstrip.com/en/feed/ comics "!CommitStrip"
+http://m.angels.mlb.com/partnerxml/gen/news/rss/ana.xml sports baseball "!Angels Baseball"
+http://m.padres.mlb.com/partnerxml/gen/news/rss/sd.xml sports baseball "!Padres Baseball"
 
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
 "query:FreeBSD News:tags # \"freebsd\""
 "query:Comics:tags # \"comics\""
 "query:Political News:tags # \"politics\""
+"query:Sports News:tags # \"sports\""
