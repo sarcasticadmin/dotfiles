@@ -1,0 +1,1 @@
+IRB.conf[:ECHO] = false
