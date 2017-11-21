@@ -113,7 +113,7 @@ if [ ${ENABLE_GPG:-1} -eq 0 ]; then
   export GPG_TTY
   # Make sure ssh uses the right sock
   unset SSH_AUTH_SOCK
-  if [ -f "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
+  if [ -e "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
     SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
   else
     SSH_AUTH_SOCK="/var/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
