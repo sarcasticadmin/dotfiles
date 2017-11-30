@@ -8,7 +8,7 @@ pkg install vim stow
 
 ```bash
 cd ~
-git clone git@github.com/l2ol33rt/dotfiles.git ~/dotfiles
+git clone git@github.com/sarcasticadmin/dotfiles.git ~/dotfiles
 cd dotfiles/vim/.vim
 git submodule update --init
 ```
