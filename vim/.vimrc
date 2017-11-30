@@ -40,6 +40,10 @@ autocmd BufEnter *.tf* colorscheme icansee
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 
+" Terraform specific configs
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
   set t_Co=256
