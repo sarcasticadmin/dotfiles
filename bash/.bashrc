@@ -64,7 +64,7 @@ if [ "$TERM" != "256color" ]; then
     PS1='\[\033[01;36m\]\u@\h\[\033[01;37m\] \W \$\[\033[00m\] '
   fi
 
-  if [ ${os_platform} == "FreeBSD" ];then
+  if [ ${os_platform} == "FreeBSD" ] || [ ${os_platform} == "Darwin"  ];then
     alias ls='ls -G'
   else
     alias ls='ls --color=auto'
