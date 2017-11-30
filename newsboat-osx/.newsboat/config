@@ -1,0 +1,26 @@
+color listnormal          white   black
+color listfocus           color202  white  bold
+color listnormal_unread   white black bold
+color listfocus_unread    color202 white bold
+color info                yellow  blue   bold
+color article             white   black
+
+# Flipflop browser open
+unbind-key o 
+unbind-key O
+bind-key O open-in-browser
+bind-key o open-in-browser-and-mark-read
+
+# Reload on start and xx min
+auto-reload yes
+reload-time 30
+
+# Clean up
+keep-articles-days 14
+
+# Launch browser
+browser "open -a \"Google Chrome\" %u"
+
+# Format UI
+feedlist-format     "%11u %t"
+articlelist-format  "%4i %f %D  %?T?|%-24T|  ?%t"
