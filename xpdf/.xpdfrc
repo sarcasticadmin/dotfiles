@@ -1,0 +1,1 @@
+urlCommand      "firefox -new-tab %s"
