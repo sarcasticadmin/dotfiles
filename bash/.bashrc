@@ -1,6 +1,47 @@
-# Test comment
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+#####
+#
+# Functions
+#
+#####
+
+# Generate a random password:
+#   $1 = number of characters; defaults to 32
+#   $2 = include special characters; 1 = yes, 0 = no; defaults to 1
+randpass() {
+  [ "$2" == "0" ] && CHAR="[:alnum:]" || CHAR="[:graph:]"
+  cat /dev/urandom | tr -cd "$CHAR" | head -c ${1:-32}
+  echo
+}
+
+# Generate ssh-fingerprints given a key file:
+#   $1 = key file
+fingerprints() {
+  local file="$1"
+  while read l; do
+    [[ -n $l && ${l###} = $l ]] && ssh-keygen -l -f /dev/stdin <<<$l
+  done < $file
+}
+
+# Make sure ssh uses the right socket
+ssh_agent_setup() {
+  # If we are comming from ssh and are forwarding an agent
+  # then move on
+  if [ "${SSH_TTY}" ] && [ "${SSH_AUTH_SOCK}" ]; then
+    # do nothing
+    return
+  else
+    unset SSH_AUTH_SOCK
+    if [ -e "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
+      SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+    else
+      SSH_AUTH_SOCK="/var/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
+    fi
+    export SSH_AUTH_SOCK
+  fi
+}
 
 # Look at my default knobs
 if [ -f "${HOME}/.bashrc_vars" ]; then
@@ -76,24 +117,6 @@ else
   PS1='\u@\h \W \$ '
 fi
 
-# Try to keep environment pollution down, EPA loves us.
-
-# Generate a random password
-#  $1 = number of characters; defaults to 32
-#  $2 = include special characters; 1 = yes, 0 = no; defaults to 1
-function randpass() {
-  [ "$2" == "0" ] && CHAR="[:alnum:]" || CHAR="[:graph:]"
-  cat /dev/urandom | tr -cd "$CHAR" | head -c ${1:-32}
-  echo
-}
-
-function fingerprints() {
-  local file="$1"
-  while read l; do
-    [[ -n $l && ${l###} = $l ]] && ssh-keygen -l -f /dev/stdin <<<$l
-  done < $file
-}
-
 # AWS CLI bash stuff
 if [ -f "$HOME/.bash_aws" ]; then
   source "$HOME/.bash_aws"
@@ -111,12 +134,6 @@ if [ ${ENABLE_GPG:-1} -eq 0 ]; then
   # gpg pinentry
   GPG_TTY=$(tty)
   export GPG_TTY
-  # Make sure ssh uses the right sock
-  unset SSH_AUTH_SOCK
-  if [ -e "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
-    SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-  else
-    SSH_AUTH_SOCK="/var/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
-  fi
-  export SSH_AUTH_SOCK
+
+  ssh_agent_setup
 fi
