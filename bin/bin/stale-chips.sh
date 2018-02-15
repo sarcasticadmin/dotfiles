@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 
 # If git branch -d fails its due to the default branch being set to master
 # instead of develop.
@@ -14,8 +15,13 @@
 #####
 
 MERGE_BRANCH='master'
-GIT_REMOTE='upstream'
+#GIT_REMOTE=($(git remote))
+GIT_REMOTE=""
 ME=$(git config user.email)
+#A='1origin'
+
+#if [[ "${GIT_REMOTE[$A]}" ]]; then printf '%s\n' "origun is in array"; fi
+
 
 while getopts "b:r:m:" opt; do
     case $opt in
