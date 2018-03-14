@@ -61,6 +61,18 @@ export HISTFILESIZE PROMPT_COMMAND
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Set other preferences
+export PAGER="less -s -M +Gg"
+
+# Color for manpages
+export LESS_TERMCAP_mb=$'\e[1;31m'           # begin bold
+export LESS_TERMCAP_md=$'\e[1;38;5;208m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m'       # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;38;5;111m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'              # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'              # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'              # reset underline
+
 # Aliases
 alias ll="ls -lah"
 alias tmux="tmux -2"
