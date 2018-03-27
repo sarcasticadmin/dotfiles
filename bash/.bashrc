@@ -140,7 +140,7 @@ stty -ixon
 # gpg-agent stuff
 if [ ${ENABLE_GPG:-1} -eq 0 ]; then
   # Is daemon running?
-  if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
     eval $(gpg-agent --daemon)
   fi
   # gpg pinentry
@@ -148,4 +148,11 @@ if [ ${ENABLE_GPG:-1} -eq 0 ]; then
   export GPG_TTY
 
   ssh_agent_setup
+fi
+
+# Start up usb auto mounting if present
+if command -v dsbmc-cli > /dev/null 2>&1; then
+  if ! pgrep -x -u "${USER}"  dsbmc-cli > /dev/null 2>&1; then
+    nohup dsbmc-cli -a > /dev/null 2>&1 &
+  fi
 fi
