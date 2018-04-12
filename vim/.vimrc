@@ -40,6 +40,9 @@ autocmd BufEnter *.tf* colorscheme icansee
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 
+" Rubyisms
+autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
+
 " Terraform specific configs
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
