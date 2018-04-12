@@ -8,6 +8,10 @@ newsboat*/.newsboat/cache.db
 newsboat*/.newsboat/history.*
 newsboat*/.newsboat/cache.*
 
+### rbenv ###
+rbenv/.rbenv/shims
+rbenv/.rbenv/versions
+
 # Created by https://www.gitignore.io/api/osx,vim
 
 ### OSX ###

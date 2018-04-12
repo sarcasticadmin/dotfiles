@@ -10,3 +10,12 @@
 [submodule "vim/.vim/bundle/terraform"]
 	path = vim/.vim/bundle/terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "rbenv/.rbenv/plugins/ruby-build"]
+	path = rbenv/.rbenv/plugins/ruby-build
+	url = https://github.com/rbenv/ruby-build.git
+[submodule "rbenv/.rbenv/plugins/rbenv-binstubs"]
+	path = rbenv/.rbenv/plugins/rbenv-binstubs
+	url = https://github.com/ianheggie/rbenv-binstubs
+[submodule "rbenv/.rbenv/plugins/rbenv-default-gems"]
+	path = rbenv/.rbenv/plugins/rbenv-default-gems
+	url = https://github.com/rbenv/rbenv-default-gems.git
