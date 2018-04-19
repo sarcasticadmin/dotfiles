@@ -166,3 +166,13 @@ fi
 if command -v rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
+
+# pyenv configs
+if [ -d "${HOME}/.pyenv" ] || [ -L "${HOME}/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+if command -v pyenv 1> /dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
