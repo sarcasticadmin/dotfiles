@@ -19,3 +19,6 @@
 [submodule "rbenv/.rbenv/plugins/rbenv-default-gems"]
 	path = rbenv/.rbenv/plugins/rbenv-default-gems
 	url = https://github.com/rbenv/rbenv-default-gems.git
+[submodule "pyenv/.pyenv"]
+	path = pyenv/.pyenv
+	url = https://github.com/pyenv/pyenv.git
