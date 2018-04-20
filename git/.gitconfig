@@ -10,3 +10,4 @@
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   today = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
   graph = log --graph --all --decorate --stat --date=iso
+  ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
