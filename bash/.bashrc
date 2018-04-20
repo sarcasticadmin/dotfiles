@@ -176,3 +176,11 @@ fi
 if command -v pyenv 1> /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# go specifics
+if command -v go > /dev/null 2>&1; then
+  export GOPATH="${HOME}/go"
+  if [ ! -d "${HOME}/go/src" ]; then
+    mkdir "${HOME}/go/src"
+  fi
+fi
