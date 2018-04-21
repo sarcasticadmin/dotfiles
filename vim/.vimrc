@@ -22,7 +22,7 @@ set ignorecase
 set smartcase
 
 " Use pathogen to manage vim plugins
-call pathogen#infect() 
+call pathogen#infect()
 
 " Syntax Toggle
 syntax on
@@ -36,6 +36,7 @@ autocmd BufEnter * colorscheme vibrantink
 autocmd BufEnter *.py colorscheme icansee
 autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
+autocmd BufEnter *.go colorscheme icansee
 
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
@@ -46,6 +47,17 @@ autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
 " Terraform specific configs
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
+
+" goisms
+let g:go_disable_autoinstall = 1
+let g:go_fmt_autosave=1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields=1
+let g:go_highlight_types=1
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
@@ -89,7 +101,7 @@ endfunction
 
 " Toggle Spell Checking
 function! <SID>CheckSpelling()
-  "If spell check is set then disable 
+  "If spell check is set then disable
   if &spell
     set nospell
     echo "Spell Checking Disabled"
