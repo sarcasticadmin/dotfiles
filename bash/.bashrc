@@ -181,6 +181,6 @@ fi
 if command -v go > /dev/null 2>&1; then
   export GOPATH="${HOME}/go"
   if [ ! -d "${HOME}/go/src" ]; then
-    mkdir "${HOME}/go/src"
+    mkdir -p "${HOME}/go/src"
   fi
 fi
