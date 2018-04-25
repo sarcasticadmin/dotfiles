@@ -41,6 +41,10 @@ autocmd BufEnter *.go colorscheme icansee
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 
+" Pythonisms
+let g:autopep8_max_line_length=120
+let g:autopep8_disable_show_diff=1
+
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
 
@@ -111,14 +115,21 @@ function! <SID>CheckSpelling()
   endif
 endfunction
 
-" Make JSON sane
-function! <SID>SanitizeJSON()
-  %!python -m json.tool
-  echo "Sanitizing JSON"
+" fmt
+function! <SID>fmt()
+  if &ft == "json"
+    %!python -m json.tool
+    echo "fmt json"
+  elseif &ft == "python"
+    call Autopep8()
+    echo "fmt python"
+  else
+    echo "no filetype match for fmt"
+  endif
 endfunction
 
 " Key Bindings
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <silent> <F6> :call <SID>CheckLineWidth()<CR>
 nnoremap <silent> <F7> :call <SID>CheckSpelling()<CR>
-nnoremap <silent> <F8> :call <SID>SanitizeJSON()<CR>
+nnoremap <silent> <F8> :call <SID>fmt()<CR>

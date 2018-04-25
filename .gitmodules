@@ -25,3 +25,6 @@
 [submodule "vim/.vim/bundle/vim-go"]
 	path = vim/.vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/.vim/bundle/vim-autopep8"]
+	path = vim/.vim/bundle/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8.git
