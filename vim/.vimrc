@@ -94,7 +94,7 @@ endfunction
 highlight ColorColumn ctermbg=magenta
 function! <SID>CheckLineWidth()
   if !exists('w:checkline_enabled')
-    let w:checkline_enabled = matchadd('ColorColumn', '\%>80v.\+', 100)
+    let w:checkline_enabled = matchadd('ColorColumn', '\%>121v.\+', 100)
     echo "Highlighting Long Lines"
   else
     call matchdelete(w:checkline_enabled)
