@@ -11,6 +11,7 @@ newsboat*/.newsboat/cache.*
 ### rbenv ###
 rbenv/.rbenv/shims
 rbenv/.rbenv/versions
+rbenv/.rbenv/bundles
 
 # Created by https://www.gitignore.io/api/osx,vim
 
