@@ -177,6 +177,12 @@ if command -v pyenv 1> /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Throw all pipsi install python bins into
+# home dir bin
+if command -v pipsi > /dev/null 2>&1; then
+  export PIPSI_BIN_DIR=~/bin
+fi
+
 # go specifics
 if command -v go > /dev/null 2>&1; then
   export GOPATH="${HOME}/go"
