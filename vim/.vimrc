@@ -116,6 +116,7 @@ function! <SID>CheckSpelling()
 endfunction
 
 " fmt
+" to check format use: set filetype?
 function! <SID>fmt()
   if &ft == "json"
     %!python -m json.tool
@@ -123,6 +124,11 @@ function! <SID>fmt()
   elseif &ft == "python"
     call Autopep8()
     echo "fmt python"
+  elseif &ft == "cert"
+    "set textwidth=64
+    "call :gq
+    "execute "normal! gq"
+    echo "fmt cert [not implemented]"
   else
     echo "no filetype match for fmt"
   endif
