@@ -13,6 +13,11 @@ rbenv/.rbenv/shims
 rbenv/.rbenv/versions
 rbenv/.rbenv/bundles
 
+### weechat ###
+weechat/.weechat/logs/
+weechat/.weechat/*.log
+weechat/.weechat/sec.conf
+
 # Created by https://www.gitignore.io/api/osx,vim
 
 ### OSX ###
