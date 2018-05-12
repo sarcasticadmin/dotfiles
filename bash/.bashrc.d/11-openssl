@@ -1,0 +1,7 @@
+ssl-grab(){
+  local host="$1"
+  openssl s_client -showcerts -connect "${host}" < /dev/null 2>/dev/null
+}
+
+alias ssl-view="openssl x509 -text -noout"
+alias ssl-pem="openssl x509 -outform pem"

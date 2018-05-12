@@ -38,6 +38,8 @@ autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
 autocmd BufEnter *.go colorscheme icansee
 
+autocmd BufRead,BufNewFile ~/.bashrc.d/* set syntax=sh
+
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 

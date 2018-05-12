@@ -190,3 +190,11 @@ if command -v go > /dev/null 2>&1; then
     mkdir -p "${HOME}/go/src"
   fi
 fi
+
+# Borrowed from Davido
+# Pretty cool for separating out pieces of a shell rc
+rcfiles=$(ls ${HOME}/.bashrc.d/* 2>/dev/null)
+for file in $rcfiles; do
+    source $file
+done
+unset rcfiles
