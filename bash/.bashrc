@@ -183,14 +183,6 @@ if command -v pipsi > /dev/null 2>&1; then
   export PIPSI_BIN_DIR=~/bin
 fi
 
-# go specifics
-if command -v go > /dev/null 2>&1; then
-  export GOPATH="${HOME}/go"
-  if [ ! -d "${HOME}/go/src" ]; then
-    mkdir -p "${HOME}/go/src"
-  fi
-fi
-
 # Borrowed from Davido
 # Pretty cool for separating out pieces of a shell rc
 rcfiles=$(ls ${HOME}/.bashrc.d/* 2>/dev/null)
