@@ -30,6 +30,9 @@ syntax on
 " Enable plugins
 filetype plugin indent on
 
+" Custom dictionary
+set spellfile=~/.vim/spell/tech.utf-8.add
+
 " Define a colorscheme
 "colorscheme vividchalk
 autocmd BufEnter * colorscheme vibrantink
@@ -136,8 +139,19 @@ function! <SID>fmt()
   endif
 endfunction
 
+" Rebuild spell only if .spl is missing
+function! RebuildSpell()
+  for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+      silent exec 'mkspell! ' . fnameescape(d)
+    endif
+  endfor
+endfunction
+
 " Key Bindings
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <silent> <F6> :call <SID>CheckLineWidth()<CR>
 nnoremap <silent> <F7> :call <SID>CheckSpelling()<CR>
 nnoremap <silent> <F8> :call <SID>fmt()<CR>
+
+call RebuildSpell()
