@@ -3,3 +3,7 @@ github
 cli
 json
 jumphost
+outscaling
+zenhub
+crontab
+awscli
