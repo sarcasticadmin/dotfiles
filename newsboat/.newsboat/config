@@ -4,6 +4,7 @@ color listnormal_unread   white black bold
 color listfocus_unread    color202 white bold
 color info                yellow  blue   bold
 color article             white   black
+highlight-article "feedtitle =~ \"Webshit Weekly\"" red default bold
 
 # Flipflop browser open
 unbind-key o 
