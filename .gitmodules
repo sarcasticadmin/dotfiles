@@ -28,3 +28,6 @@
 [submodule "vim/.vim/bundle/vim-autopep8"]
 	path = vim/.vim/bundle/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
+[submodule "vim/.vim/bundle/vim-go-slide"]
+	path = vim/.vim/bundle/vim-go-slide
+	url = https://github.com/zchee/vim-go-slide

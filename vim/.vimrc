@@ -67,6 +67,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields=1
 let g:go_highlight_types=1
+autocmd BufRead,BufNewFile *.slide set filetype=slide
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
