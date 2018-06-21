@@ -125,7 +125,9 @@ endfunction
 " to check format use: set filetype?
 function! <SID>fmt()
   if &ft == "json"
-    %!python -m json.tool
+    "python35+ doesnt sort keys alpha by default
+    "https://hg.python.org/cpython/rev/58a871227e5b
+    %!if [ $(command -v python3) ];then python3 -m json.tool;else python -m json.tool;fi
     echo "fmt json"
   elseif &ft == "python"
     call Autopep8()
