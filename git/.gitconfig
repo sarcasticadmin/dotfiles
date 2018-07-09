@@ -1,16 +1,16 @@
 [user]
-  name = Robert James Hernandez
+  name  = Robert James Hernandez
   email = rob@sarcasticadmin.com
 [core]
   editor = vim
-  pager = less -R
+  pager  = less -R
 [alias]
-  stats = shortlog -sn --all --no-merges
-  recap = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
-  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-  today = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
-  graph = log --graph --all --decorate --stat --date=iso
-  ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+  stats   = shortlog -sn --all --no-merges
+  recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
+  recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  today   = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
+  graph   = log --graph --all --decorate --stat --date=iso
+  ignore  = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
   license = "!gl() { \
     if [ -z $@ ];then \
       curl -L -s https://api.github.com/licenses | jq -r '.[].key'; \
@@ -19,7 +19,7 @@
     fi;}; gl"
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean    = git-lfs clean -- %f
+  smudge   = git-lfs smudge -- %f
+  process  = git-lfs filter-process
+  required = true
