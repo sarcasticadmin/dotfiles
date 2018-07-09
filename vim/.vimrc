@@ -69,6 +69,9 @@ let g:go_highlight_fields=1
 let g:go_highlight_types=1
 autocmd BufRead,BufNewFile *.slide set filetype=slide
 
+" Yaml
+let g:syntastic_yaml_checkers = ['yamllint']
+
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
   set t_Co=256
