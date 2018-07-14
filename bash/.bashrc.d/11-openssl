@@ -1,3 +1,4 @@
+# vi:syntax=sh
 ssl-grab(){
   local host="$1"
   openssl s_client -showcerts -connect "${host}" < /dev/null 2>/dev/null
