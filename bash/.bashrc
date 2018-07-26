@@ -135,11 +135,6 @@ if [ ${os_platform} == "Darwin"  ];then
   touch "$HOME/.bash_sessions_disable"
 fi
 
-# AWS CLI bash stuff
-if [ -f "$HOME/.bash_aws" ]; then
-  source "$HOME/.bash_aws"
-fi
-
 # Disable stopping flowcontrol
 stty -ixon
 
