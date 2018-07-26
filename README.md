@@ -1,5 +1,7 @@
 # Robs dotfiles
 
+`FreeBSD` 1st dotfiles with an effort to make it work on any *nix environment
+
 ## Installation
 Dependencies:
 ```bash
@@ -9,7 +11,6 @@ pkg install vim stow
 ```bash
 cd ~
 git clone git@github.com/sarcasticadmin/dotfiles.git ~/dotfiles
-cd dotfiles/vim/.vim
 git submodule update --init
 ```
 
