@@ -158,22 +158,6 @@ if command -v dsbmc-cli > /dev/null 2>&1; then
   fi
 fi
 
-# pyenv configs
-if [ -d "${HOME}/.pyenv" ] || [ -L "${HOME}/.pyenv" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-fi
-
-if command -v pyenv 1> /dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Throw all pipsi install python bins into
-# home dir bin
-if command -v pipsi > /dev/null 2>&1; then
-  export PIPSI_BIN_DIR=~/bin
-fi
-
 # Borrowed from Davido
 # Pretty cool for separating out pieces of a shell rc
 rcfiles=$(ls ${HOME}/.bashrc.d/* 2>/dev/null)
