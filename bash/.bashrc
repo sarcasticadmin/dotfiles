@@ -158,10 +158,6 @@ if command -v dsbmc-cli > /dev/null 2>&1; then
   fi
 fi
 
-if command -v rbenv > /dev/null 2>&1; then
-  eval "$(rbenv init -)"
-fi
-
 # pyenv configs
 if [ -d "${HOME}/.pyenv" ] || [ -L "${HOME}/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
