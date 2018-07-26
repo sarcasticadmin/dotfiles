@@ -1,0 +1,41 @@
+#!/bin/sh
+
+#####
+# Launch tmux with specific windows
+#
+# Window examples
+# Split window
+#tmux new-window -n per2
+#tmux split-window -h
+#tmux selectp -t 0
+#tmux send-keys -t 0 'ssh -F ~/.ssh/config.per coolinstance' 'Enter'
+#tmux selectp -t 1
+#tmux send-keys -t 1 'newsboat' 'Enter'
+#tmux resizep -Z -t 1
+#
+# Go back to window 0
+#tmux selectw -t 0
+#####
+
+tmux new-session -d -n news -s main
+# Window 0
+tmux send-keys -t 0 'newsboat' 'Enter'
+
+# Window 1
+tmux new-window -n per
+tmux send-keys -t 0 "cd $HOME" 'Enter'
+
+# Window 2
+tmux new-window -n per2
+tmux send-keys -t 0 "cd $HOME" 'Enter'
+
+# Window 3
+tmux new-window -n wrk1
+tmux send-keys -t 0 "cd $HOME/workspace" 'Enter'
+
+# Window 4
+tmux new-window -n wrk2
+tmux send-keys -t 0 "cd $HOME/workspace" 'Enter'
+
+# Attach to tmux session
+tmux -2 attach-session -t main -d
