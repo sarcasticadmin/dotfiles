@@ -40,6 +40,8 @@ autocmd BufEnter *.py colorscheme icansee
 autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
 autocmd BufEnter *.go colorscheme icansee
+autocmd BufEnter *.yaml colorscheme vividchalk
+autocmd BufEnter *.yml colorscheme vividchalk
 
 autocmd BufRead,BufNewFile ~/.bashrc.d/* set syntax=sh
 
