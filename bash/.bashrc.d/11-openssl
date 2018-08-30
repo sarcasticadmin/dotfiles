@@ -1,8 +1,38 @@
 # vi:syntax=sh
 ssl-grab(){
   local host="$1"
+  if [ -z ${host} ]; then
+    echo "Needs a host:port to know where to grab cert"
+    return 1
+  fi
   openssl s_client -showcerts -connect "${host}" < /dev/null 2>/dev/null
 }
 
+ssl-match(){
+  local priv="$1"
+  local crt="$2"
+  (openssl x509 -noout -modulus -in ${crt} | openssl md5 ;openssl rsa -noout -modulus -in ${priv} | openssl md5) | uniq -u | if [ $(wc -c) -eq 0 ]; then echo "matching"; else echo "mismatch"; fi
+}
+
+# Convert from esoteric format to sanity
+ssl-convert(){
+  local from="$1"
+  local extension="${from##*.}"
+
+  if [ -z ${from} ]; then
+    echo "Pass in cert file to convert"
+    return 1
+  fi
+
+  if [ "${extension}" == "p7b" ] || [ "${extension}" == "pkcs7" ]; then
+    openssl pkcs7 -print_certs -in "${from}"
+  elif [ "${extension}" == "p12" ] || [ "${extension}" == "pkcs12" ] || [ "${extension}" == "pex" ]; then
+    openssl pkcs12 -in "${from}" -nodes
+  elif [ "${extension}" == "der" ] || [ "${extension}" == "cer" ]; then
+    openssl x509 -inform der -in "${from}"
+  else
+    echo "Cannot deal with extension: ${extension}"
+  fi
+}
 alias ssl-view="openssl x509 -text -noout"
 alias ssl-pem="openssl x509 -outform pem"
