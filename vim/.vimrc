@@ -48,6 +48,9 @@ autocmd BufRead,BufNewFile ~/.bashrc.d/* set syntax=sh
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 
+" Enable spellcheck for commit messages
+autocmd FileType gitcommit setlocal spell
+
 " Pythonisms
 let g:autopep8_max_line_length=120
 let g:autopep8_disable_show_diff=1
