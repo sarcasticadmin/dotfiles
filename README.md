@@ -25,6 +25,12 @@ cd ~/dotfiles
 make CONFIG=./make/workstation-pkgs.mk stow
 ```
 
+### Alternatives
+If installing on `Linux` or `OSX` use the `GNUMakefile`:
+```bash
+make -f GNUMakefile stow
+```
+
 ## Uninstall
 
 Call `make` to unstow based on predefined `workstation-pkgs.mk`
