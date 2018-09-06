@@ -1,0 +1,9 @@
+aws
+bash
+bin
+dircolors
+git
+mariadb
+ruby
+tmux
+vim
