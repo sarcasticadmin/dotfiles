@@ -17,6 +17,9 @@
     else \
       curl -L -s https://api.github.com/licenses/$@ | jq -r '.body'; \
     fi;}; gl"
+  churn   = "!gc() { \
+    echo \"scale=2; $(git log --shortstat | awk '/files changed/ {total+=$4; total+=$6} END {print total}') / $(cloc . --json | jq -r '.SUM.code')\" | bc ; \
+    }; gc"
 
 [filter "lfs"]
   clean    = git-lfs clean -- %f
