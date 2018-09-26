@@ -14,3 +14,6 @@ unstow:
 .for pkg in $(PKGS)
 	$(STOW) -D $(pkg)
 .endfor
+
+submodules:
+	git submodule update --init
