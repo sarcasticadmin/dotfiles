@@ -34,5 +34,10 @@ ssl-convert(){
     echo "Cannot deal with extension: ${extension}"
   fi
 }
+
+ssl-modulus(){
+  openssl ${1:-'x509'} -noout -modulus
+}
+
 alias ssl-view="openssl x509 -text -noout"
 alias ssl-pem="openssl x509 -outform pem"
