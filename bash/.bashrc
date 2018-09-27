@@ -129,12 +129,6 @@ else
   PS1='\u@\h \W \$ '
 fi
 
-# Platform specifics
-if [ ${os_platform} == "Darwin"  ];then
-  # Disable saving sessions in OSX
-  touch "$HOME/.bash_sessions_disable"
-fi
-
 # Disable stopping flowcontrol
 stty -ixon
 

@@ -1,0 +1,9 @@
+# vi:syntax=sh
+
+# OSX Platform specifics
+if [ ${os_platform} == "Darwin"  ];then
+  # Disable saving sessions in OSX
+  touch "$HOME/.bash_sessions_disable"
+
+  alias flush-dnscache="sudo killall -HUP mDNSResponder"
+fi
