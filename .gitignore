@@ -21,6 +21,9 @@ weechat/.weechat/sec.conf
 ### other vim ###
 vim/.vim/spell/*.spl
 
+### awscli  ###
+aws/.aws/cli/cache/
+
 # Created by https://www.gitignore.io/api/osx,vim
 
 ### OSX ###
