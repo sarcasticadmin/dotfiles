@@ -1,0 +1,60 @@
+#!/bin/sh
+
+usage(){
+  cat << EOF
+usage: $(basename $0) [OPTIONS] ARGS
+
+Simple tool for interacting with wpa_cli for wifi
+
+OPTIONS:
+  -h      Show this message
+
+EXAMPLES:
+  To print out networks:
+
+      $(basename $0) list
+
+EOF
+}
+
+while getopts "h" OPTION
+do
+  case $OPTION in
+    h )
+      usage
+      exit 0
+      ;;
+    \? )
+      usage
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+if [ -z $1 ] || [ $1 == "status" ];then
+  wpa_cli status
+elif [ $1 == "list" ];then
+  wpa_cli list_networks
+elif [ $1 == "scan" ];then
+  wpa_cli scan
+  sleep 1
+  wpa_cli scan_results
+elif [ $1 == "enable" ];then
+  wpa_cli enable_network $2
+elif [ $1 == "add" ]; then
+  shift $((OPTIND -1))
+  SSID="$1"
+  PSK=$2
+  NETWORK_ID=$(wpa_cli add_network | awk -F' ' 'NR == 2 {print $NF}')
+  wpa_cli << EOF
+set_network $NETWORK_ID ssid "$SSID"
+set_network $NETWORK_ID psk "$PSK"
+save_config
+EOF
+
+  echo "Successfully added $NETWORK_ID"
+else
+  usage
+  exit 1
+fi
+exit 0
