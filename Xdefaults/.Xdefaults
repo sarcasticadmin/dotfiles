@@ -1,6 +1,6 @@
 Xcursor.size: 24
 
-#URxvt*geometry:         112x22  
+#URxvt*geometry:         112x22
 #Rxvt*font:            xft:System San Francisco Display:size=15
 #Rxvt*font:            xft:Bitstream Vera Sans Mono:size=15
 #URxvt*font:            xft:monaco:size=15
@@ -14,9 +14,15 @@ URxvt*foreground: #ffffff
 
 URxvt.font:     xft:Ubuntu Mono:size=16:antialias=true
 URxvt.boldFont: xft:Ubuntu Mono:bold:size=16:antialias=true
-URxvt*urlLauncher:         firefox  
+URxvt*urlLauncher:         firefox
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:        true
 URxvt*scrollColor:        #000000
 URxvt.termName: rxvt-unicode-256color
 URxvt.color12: rgb:5c/5c/ff
+
+# XTerm to match
+XTerm*background: #000000
+XTerm*foreground: #ffffff
+XTerm.vt100.faceName: xft:Ubuntu Mono:size=16:antialias=true
+XTerm.vt100.font: 7x13
