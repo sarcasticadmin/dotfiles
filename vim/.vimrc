@@ -160,6 +160,8 @@ function! RebuildSpell()
 endfunction
 
 " Key Bindings
+" Disable F1 help since its too close to ESC
+nmap <F1> <nop>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <silent> <F6> :call <SID>CheckLineWidth()<CR>
 nnoremap <silent> <F7> :call <SID>CheckSpelling()<CR>
