@@ -17,10 +17,6 @@ Sources:
   - https://github.com/rbenv/rbenv/wiki/Understanding-binstubs
   - https://yehudakatz.com/2011/05/30/gem-versioning-and-bundler-doing-it-right/
 
-
-
-
-
 ## Examples
 
 Show all versions of rbenv install rubies:

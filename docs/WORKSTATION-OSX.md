@@ -1,4 +1,5 @@
 # Configure OSX Workstation
+
 Leverages `brew` and existing `brewfile`
 ```
 stow workstation-osx
