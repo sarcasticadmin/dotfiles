@@ -4,6 +4,7 @@ bash
 bin
 dircolors
 fonts
+gcloud
 git
 gnupg
 i3

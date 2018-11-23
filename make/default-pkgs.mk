@@ -2,6 +2,7 @@ aws
 bash
 bin
 dircolors
+gcloud
 git
 mariadb
 ruby
