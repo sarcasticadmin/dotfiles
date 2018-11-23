@@ -42,16 +42,23 @@ elif [ $1 == "scan" ];then
 elif [ $1 == "enable" ];then
   wpa_cli enable_network $2
 elif [ $1 == "add" ]; then
-  shift $((OPTIND -1))
-  SSID="$1"
-  PSK=$2
   NETWORK_ID=$(wpa_cli add_network | awk -F' ' 'NR == 2 {print $NF}')
-  wpa_cli << EOF
+  SSID="$2"
+  PSK="$3"
+  if [ -z $PSK ];then
+    echo "hello"
+    wpa_cli << EOF
+set_network $NETWORK_ID ssid "$SSID"
+set_network $NETWORK_ID key_mgmt NONE
+save_config
+EOF
+  else
+    wpa_cli << EOF
 set_network $NETWORK_ID ssid "$SSID"
 set_network $NETWORK_ID psk "$PSK"
 save_config
 EOF
-
+  fi
   echo "Successfully added $NETWORK_ID"
 else
   usage
