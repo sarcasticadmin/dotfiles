@@ -17,3 +17,9 @@ unstow:
 
 submodules:
 	git submodule update --init
+
+test-md:
+	test $$(find . -type f -iname '*.md' \! \( -path './docs/*' \) -d 2 | wc -c) -eq 0; \
+	  echo "Docs Look good!"
+
+test: test-md
