@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "zegervdv/zathura"
 
+brew "aria2"
 brew "awscli"
 brew "azure-cli"
 brew "bash"

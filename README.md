@@ -52,3 +52,7 @@ Bulk upgrade all plugins:
 cd ~/dotfiles/vim/.vim/
 git submodule foreach git pull origin master
 ```
+
+## Docs
+
+[See more documentation](./docs/README.md)
