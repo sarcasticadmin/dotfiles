@@ -26,7 +26,7 @@ ssl-convert(){
 
   if [ "${extension}" == "p7b" ] || [ "${extension}" == "pkcs7" ]; then
     openssl pkcs7 -print_certs -in "${from}"
-  elif [ "${extension}" == "p12" ] || [ "${extension}" == "pkcs12" ] || [ "${extension}" == "pex" ]; then
+  elif [ "${extension}" == "p12" ] || [ "${extension}" == "pkcs12" ] || [ "${extension}" == "pfx" ]; then
     openssl pkcs12 -in "${from}" -nodes
   elif [ "${extension}" == "der" ] || [ "${extension}" == "cer" ]; then
     openssl x509 -inform der -in "${from}"
