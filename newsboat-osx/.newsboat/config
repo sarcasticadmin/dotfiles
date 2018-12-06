@@ -9,10 +9,20 @@ highlight-article "feedtitle =~ \"Webshit Weekly\"" green default bold
 highlight-article "tags =~ \"security\"" red default bold
 
 # Flipflop browser open
-unbind-key o 
+unbind-key o
 unbind-key O
 bind-key O open-in-browser
 bind-key o open-in-browser-and-mark-read
+
+# Flipflop Navigation
+unbind-key k
+unbind-key j
+unbind-key K
+unbind-key J
+bind-key k prev
+bind-key j next
+bind-key K prev-feed
+bind-key J next-feed
 
 # Reload on start and xx min
 auto-reload yes
