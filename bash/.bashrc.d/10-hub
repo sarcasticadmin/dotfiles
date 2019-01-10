@@ -1,0 +1,8 @@
+# vi:syntax=sh
+# hub specifics
+if command -v hub > /dev/null 2>&1; then
+  alias hub-create="(pvim | hub issue create -F -)"
+  alias hub-issue="hub issue"
+  alias hub-pr="hub pr list"
+  alias hub-browse="hub browse -- $@"
+fi
