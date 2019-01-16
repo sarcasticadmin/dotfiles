@@ -72,6 +72,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields=1
 let g:go_highlight_types=1
+" go-vim ignore warnings for vim < 7.4.1689
+let g:go_version_warning = 0
 autocmd BufRead,BufNewFile *.slide set filetype=slide
 
 " Yaml
