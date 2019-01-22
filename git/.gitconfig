@@ -4,6 +4,8 @@
 [core]
   editor = vim
   pager  = less -R
+[stash]
+  showPatch = true
 [alias]
   stats   = shortlog -sn --all --no-merges
   recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
