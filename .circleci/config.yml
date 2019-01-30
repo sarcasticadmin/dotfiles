@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: koalaman/shellcheck:v0.6.0
+    steps:
+      - checkout
+      - run:
+          name: Check for master branch merges
+          command: if [[ -n "$(git log origin/master..HEAD --merges)" ]]; then echo "master was merged into this branch, please use \"git rebase\" instead"; exit 1; fi
+      - run:
+          name: Shell Linting
+          command: for file in $(find ./bin -type f -name "*.sh"); do shellcheck --format=gcc $file; done;
