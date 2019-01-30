@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  lint:
     docker:
       - image: koalaman/shellcheck-alpine:v0.6.0
     steps:
@@ -11,3 +11,11 @@ jobs:
       - run:
           name: Shell Linting
           command: for file in $(find ./bin -type f -name "*.sh"); do shellcheck --format=gcc $file; done;
+  test:
+    docker:
+      - image: eugenmayer/make
+    steps:
+      - checkout
+      - run:
+          name: Doc Dir Check
+          command: make -f GNUMakefile test-md

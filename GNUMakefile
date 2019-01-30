@@ -15,6 +15,6 @@ submodules:
 	git submodule update --init
 
 test-md:
-	find . -type f -iname '*.md' \! \( -path './docs/*' \) -d 2
+	find . -mindepth 2 -type f -iname '*.md' \! \( -path './docs/*' \)
 
 test: test-md
