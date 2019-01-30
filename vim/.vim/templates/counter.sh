@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # Simple counter with timout
 MAX_CHECK=5
 SLEEP_INTERVAL=2
@@ -9,5 +10,5 @@ while true; do
   fi
   echo "Count is at: ${COUNT}" 
   sleep ${SLEEP_INTERVAL}
-  let COUNT=COUNT+1
+  (( COUNT=COUNT+1 ))
 done
