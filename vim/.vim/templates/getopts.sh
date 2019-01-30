@@ -1,6 +1,7 @@
+# shellcheck disable=SC2148
 usage(){
   cat << EOF
-usage: $(basename $0) [OPTIONS] ARGS
+usage: "$(basename "$0")" [OPTIONS] ARGS
 
 Simple template of getopts
 
@@ -11,7 +12,7 @@ OPTIONS:
 EXAMPLES:
   To print out arg1:
 
-      $(basename $0) arg1
+      "$(basename "$0")" arg1
 
 EOF
 }
@@ -34,4 +35,4 @@ do
 done
 shift $((OPTIND -1))
 
-echo ${ARG1:-'notset'}
+echo "${ARG1:-'notset'}"
