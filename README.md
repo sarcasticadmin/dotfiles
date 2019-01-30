@@ -1,5 +1,7 @@
 # Robs dotfiles
 
+[![CircleCI](https://circleci.com/gh/sarcasticadmin/dotfiles/tree/master.svg?style=shield)](https://circleci.com/gh/sarcasticadmin/dotfiles/tree/master)
+
 ![Beastie](https://upload.wikimedia.org/wikipedia/en/5/55/Bsd_daemon.jpg)
 
 `FreeBSD` 1st dotfiles with an effort to make it work on any *nix environment
