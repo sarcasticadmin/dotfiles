@@ -13,8 +13,8 @@
 DEPENDENCIES=( qrencode )
 
 check_bin(){
-  for dep in ${DEPENDENCIES[@]}; do
-    if [ ! $(/usr/bin/which ${dep}) ];then
+  for dep in "${DEPENDENCIES[@]}"; do
+    if [ ! "$(command -v "${dep}")" ];then
      echo "${dep} not installed"
      exit 1
     fi
@@ -23,8 +23,8 @@ check_bin(){
 
 check_bin
 echo -e "Enter in secret key:"
-read SECRETKEY
+read -r SECRETKEY
 echo -e "Enter in a key name (no spaces):"
-read SECRETNAME
+read -r SECRETNAME
 
 qrencode -t ANSI "otpauth://totp/${SECRETNAME}?secret=${SECRETKEY}"
