@@ -6,6 +6,12 @@
   pager  = less -R
 [stash]
   showPatch = true
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = icdiff --line-numbers $LOCAL $REMOTE
 [alias]
   stats   = shortlog -sn --all --no-merges
   recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
