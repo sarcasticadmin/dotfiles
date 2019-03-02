@@ -1,0 +1,8 @@
+# vi:syntax=sh
+# vagrant specifics
+if command -v vagrant > /dev/null 2>&1; then
+  # Disable vagrant box warning
+  export VAGRANT_BOX_UPDATE_CHECK_DISABLE=yes
+  # Disable vagrant built-in version check
+  export VAGRANT_CHECKPOINT_DISABLE=yes
+fi
