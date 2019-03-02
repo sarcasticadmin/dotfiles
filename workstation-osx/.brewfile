@@ -28,6 +28,7 @@ brew "grep", args: ["with-default-names"]
 brew "gzip"
 brew "htop"
 brew "hub"
+brew "icdiff"
 brew "imagemagick"
 brew "jq"
 brew "kubernetes-cli"
