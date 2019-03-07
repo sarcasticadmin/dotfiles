@@ -45,6 +45,10 @@ autocmd BufEnter *.yml colorscheme vividchalk
 
 autocmd BufRead,BufNewFile ~/.bashrc.d/* set syntax=sh
 
+" Tab delimited files
+autocmd BufNewFile,BufRead *.tsv set ft=tsv
+autocmd FileType tsv setlocal softtabstop=8 tabstop=8 noexpandtab
+
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
 
