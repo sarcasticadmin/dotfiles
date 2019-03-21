@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # vi:syntax=sh
 # cloud aliases
 
@@ -6,8 +7,8 @@
 aws-region() {
   regions=$(curl -Ss https://raw.githubusercontent.com/jsonmaur/aws-regions/master/regions.json)
   if [ "$1" ];then
-    echo $regions | jq --arg loc "$1" -r '.[]| select((.name|ascii_downcase)==($loc|ascii_downcase)) | .code'
+    echo "$regions" | jq --arg loc "$1" -r '.[]| select((.name|ascii_downcase)==($loc|ascii_downcase)) | .code'
   else
-    echo $regions | jq -r '.[] | [ .code, .name ] | @tsv'
+    echo "$regions" | jq -r '.[] | [ .code, .name ] | @tsv'
   fi
 }

@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # vi:syntax=sh
 # ruby specifics
 if command -v rbenv > /dev/null 2>&1; then

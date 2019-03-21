@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # vi:syntax=sh
 # vagrant specifics
 if command -v vagrant > /dev/null 2>&1; then
