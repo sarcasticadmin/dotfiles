@@ -1,7 +1,8 @@
+# shellcheck disable=SC2148
 # vi:syntax=sh
 ssl-grab(){
   local host="$1"
-  if [ -z ${host} ]; then
+  if [ -z "${host}" ]; then
     echo "Needs a host:port to know where to grab cert"
     return 1
   fi
@@ -11,7 +12,7 @@ ssl-grab(){
 ssl-match(){
   local priv="$1"
   local crt="$2"
-  (openssl x509 -noout -modulus -in ${crt} | openssl md5 ;openssl rsa -noout -modulus -in ${priv} | openssl md5) | uniq -u | if [ $(wc -c) -eq 0 ]; then echo "matching"; else echo "mismatch"; fi
+  (openssl x509 -noout -modulus -in "${crt}" | openssl md5 ;openssl rsa -noout -modulus -in "${priv}" | openssl md5) | uniq -u | if [ "$(wc -c)" -eq 0 ]; then echo "matching"; else echo "mismatch"; fi
 }
 
 # Convert from esoteric format to sanity
@@ -19,7 +20,7 @@ ssl-convert(){
   local from="$1"
   local extension="${from##*.}"
 
-  if [ -z ${from} ]; then
+  if [ -z "${from}" ]; then
     echo "Pass in cert file to convert"
     return 1
   fi
@@ -36,7 +37,7 @@ ssl-convert(){
 }
 
 ssl-modulus(){
-  openssl ${1:-'x509'} -noout -modulus
+  openssl "${1:-'x509'}" -noout -modulus
 }
 
 alias ssl-view="openssl x509 -text -noout"

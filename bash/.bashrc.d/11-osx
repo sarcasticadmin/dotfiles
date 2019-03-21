@@ -1,7 +1,9 @@
+# shellcheck disable=SC2148
 # vi:syntax=sh
 
 # OSX Platform specifics
-if [ ${os_platform} == "Darwin"  ];then
+# shellcheck disable=SC2154
+if [ "${os_platform}" == "Darwin"  ];then
   # Disable saving sessions in OSX
   touch "$HOME/.bash_sessions_disable"
 

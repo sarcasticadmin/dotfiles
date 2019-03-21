@@ -1,0 +1,14 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+# cloud aliases
+
+# Mapping AWS code to region (.i.e. N. Virginia => us-east-1)
+# Because I cant ever remember this name to code mapping
+aws-region() {
+  regions=$(curl -Ss https://raw.githubusercontent.com/jsonmaur/aws-regions/master/regions.json)
+  if [ "$1" ];then
+    echo "$regions" | jq --arg loc "$1" -r '.[]| select((.name|ascii_downcase)==($loc|ascii_downcase)) | .code'
+  else
+    echo "$regions" | jq -r '.[] | [ .code, .name ] | @tsv'
+  fi
+}
