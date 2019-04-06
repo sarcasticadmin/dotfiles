@@ -2,6 +2,7 @@
 
 Because I can never remember some of these things:
 
+* [aws](./AWS.md)
 * [git](./GIT.md)
 * [rbenv](./RBENV.md)
 * [weechat](./WEECHAT.md)
