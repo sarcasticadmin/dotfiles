@@ -82,6 +82,7 @@ autocmd BufRead,BufNewFile *.slide set filetype=slide
 
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
+autocmd BufNewFile *.yaml,*.yml 0r ~/.vim/templates/skeleton.yaml
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
