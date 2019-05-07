@@ -1,12 +1,15 @@
-# Robs dotfiles
+![Beastie](https://upload.wikimedia.org/wikipedia/en/5/55/Bsd_daemon.jpg)
 
 [![CircleCI](https://circleci.com/gh/sarcasticadmin/dotfiles/tree/master.svg?style=shield)](https://circleci.com/gh/sarcasticadmin/dotfiles/tree/master)
 
-![Beastie](https://upload.wikimedia.org/wikipedia/en/5/55/Bsd_daemon.jpg)
+# Robs dotfiles
+
+> "The enjoyment of one's tools is an essential ingredient of successful work." -- Donald E. Knuth
 
 `FreeBSD` 1st dotfiles with an effort to make it work on any *nix environment
 
 ## Installation
+
 Dependencies:
 ```bash
 su -
@@ -18,19 +21,26 @@ Clone down repo and grab all git submodules:
 ```bash
 cd ~
 git clone git@github.com/sarcasticadmin/dotfiles.git
-git submodule update --init
 ```
 
 Call `make` to stow based on predefined `pkgs.mk`
 ```bash
 cd ~/dotfiles
-make CONFIG=./make/workstation-pkgs.mk stow
+make CONFIG=./make/workstation-pkgs.mk submodules stow
 ```
 
 ### Alternatives
+
 If installing on `Linux` or `OSX` use the `GNUMakefile`:
 ```bash
 make -f GNUMakefile stow
+```
+
+#### Submodules
+
+Grab all git submodules without make
+```bash
+git submodule update --init
 ```
 
 ## Uninstall
