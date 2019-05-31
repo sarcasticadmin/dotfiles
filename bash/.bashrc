@@ -1,3 +1,6 @@
+# Check umask if not set then set it sanely
+[ "$(umask)" == "0000" ] && umask 0022
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
