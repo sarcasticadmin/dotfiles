@@ -1,3 +1,6 @@
+# Check umask if not set then set it sanely
+[ "$(umask)" == "0000" ] && umask 0022
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -51,15 +54,29 @@ fi
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE bash(1)
-HISTSIZE=6000
-PROMPT_COMMAND="history -a"
-
-export HISTFILESIZE PROMPT_COMMAND
+# force commands that you entered on more than one line to be adjusted
+# to fit on only one
+shopt -s cmdhist
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# for setting history length see HISTSIZE bash(1)
+HISTSIZE=8000
+
+# recording each line of history as its issued
+PROMPT_COMMAND="history -a"
+
+# Ignore things in history
+HISTIGNORE='top:ls:bg:fg:history'
+
+# ignore duplicate commands and commands starting with whitespace
+HISTCONTROL='ignoredups'
+
+# timestamp of each command in history
+# format example: 8000  2019-05-31 00:39:40 ps aux
+HISTTIMEFORMAT='%F %T '
 
 # Set other preferences
 export PAGER="less -s -M +Gg"
