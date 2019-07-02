@@ -1,0 +1,7 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+# silver searcher specifics
+if command -v ag > /dev/null 2>&1; then
+  # shellcheck disable=SC2016
+  agr() { ag -0 -l "$1" | AGR_FROM="$1" AGR_TO="$2" xargs -0 perl -pi -e 's/$ENV{AGR_FROM}/$ENV{AGR_TO}/g'; }
+fi

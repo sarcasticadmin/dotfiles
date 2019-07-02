@@ -1,0 +1,16 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+# docker specifics
+if command -v docker > /dev/null 2>&1; then
+
+  docker-run() {
+    local image=$1
+    local shell=${2:-'/bin/sh'}
+    docker run --rm -it "$image" "$shell"
+  }
+
+  # Override config.json for things like ps format
+  if [ -d "${HOME}"/.docker.d ];then
+    export DOCKER_CONFIG="${HOME}/.docker.d"
+  fi
+fi
