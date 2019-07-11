@@ -133,7 +133,12 @@ if [ "$TERM" != "256color" ]; then
   if [[ ${EUID} == 0 ]]; then
     PS1='\[\033[01;31m\]\h\[\033[01;37m\] \W \$\[\033[00m\] '
   else
-    PS1='\[\033[01;36m\]\u@\h\[\033[01;37m\] \W \$\[\033[00m\] '
+    # Exclude username in PS1 when not connected via SSH
+    if [ "${SSH_TTY}" ]; then
+      PS1='\[\033[01;36m\]\u@\h\[\033[01;37m\] \W \$\[\033[00m\] '
+    else
+      PS1='\[\033[01;36m\]\h\[\033[01;37m\] \W \$\[\033[00m\] '
+    fi
   fi
 
   if [ ${os_platform} == "FreeBSD" ] || [ ${os_platform} == "Darwin"  ];then

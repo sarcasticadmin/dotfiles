@@ -6,6 +6,7 @@ Because I can never remember some of these things:
 * [aws](./AWS.md)
 * [docker](./DOCKER.md)
 * [git](./GIT.md)
+* [podcasts](./PODCASTS.md)
 * [ruby](./RUBY.md)
 * [rbenv](./RBENV.md)
 * [weechat](./WEECHAT.md)
