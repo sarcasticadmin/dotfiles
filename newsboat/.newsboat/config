@@ -7,6 +7,7 @@ color article             white   black
 
 highlight-article "feedtitle =~ \"Webshit Weekly\"" green default bold
 highlight-article "tags =~ \"security\"" red default bold
+highlight-article "tags =~ \"dtrace\"" green default bold
 
 # Flipflop browser open
 unbind-key o
