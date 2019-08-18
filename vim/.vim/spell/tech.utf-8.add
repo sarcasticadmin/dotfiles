@@ -20,3 +20,7 @@ aws
 openvpn
 tunnelblick
 HMAC
+jinja
+unicode
+automount
+nfs
