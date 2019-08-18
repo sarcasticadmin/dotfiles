@@ -9,10 +9,21 @@ Simple tool for interacting with wpa_cli for wifi
 OPTIONS:
   -h      Show this message
 
+ARGS:
+  add     Add a new wifi via SSID and passphrase
+  disable Disable network thats exists in wpa_supplicant.config
+  enable  Enable network thats exists in wpa_supplicant.config
+  list    List the available configured networks and current status
+  status  Display the status of the wifi interface
+
 EXAMPLES:
   To print out networks:
 
       $(basename $0) list
+
+  Add open wifi SSID to wpa_supplicant.conf:
+
+      $(basename $0) add openwifissid
 
 EOF
 }
@@ -31,6 +42,7 @@ do
   esac
 done
 shift $((OPTIND -1))
+
 if [ -z $1 ] || [ $1 == "status" ];then
   wpa_cli status
 elif [ $1 == "list" ];then
@@ -41,12 +53,13 @@ elif [ $1 == "scan" ];then
   wpa_cli scan_results
 elif [ $1 == "enable" ];then
   wpa_cli enable_network $2
+elif [ $1 == "disable" ];then
+  wpa_cli disable_network $2
 elif [ $1 == "add" ]; then
   NETWORK_ID=$(wpa_cli add_network | awk -F' ' 'NR == 2 {print $NF}')
   SSID="$2"
   PSK="$3"
   if [ -z $PSK ];then
-    echo "hello"
     wpa_cli << EOF
 set_network $NETWORK_ID ssid "$SSID"
 set_network $NETWORK_ID key_mgmt NONE

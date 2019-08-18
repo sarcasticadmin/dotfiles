@@ -8,6 +8,10 @@ Currently installed the following plugins:
   - ruby-build: Installs any version of ruby for local user
   - binstubs: provides executables specific for a projects bundle
 
+## Updating
+
+* `ruby-build` needs to be updated if you want to get the latest versions of rubies to build
+
 ### Binstubs
 
 When you run an executable from the command line without bundle exec, this wrapper invokes
