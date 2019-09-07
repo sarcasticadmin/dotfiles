@@ -27,7 +27,7 @@ jobs:
           command: test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
       - run:
           name: Validate tmux config for 2.6
-          command: cat tmux-* | grep 'invalid'; test $? -eq 1
+          command: cat tmux-*.log | grep 'invalid'; test $? -eq 1
 
 workflows:
   version: 2
