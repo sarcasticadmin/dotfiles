@@ -1,3 +1,4 @@
+---
 version: 2
 jobs:
   lint:
@@ -16,6 +17,17 @@ jobs:
       - run:
           name: Doc Dir Check
           command: make -f GNUMakefile test-md
+  test-tmux26:
+    docker:
+      - image: sarcasticadmin/tmux@sha256:8075057a34edafd8e348ac09b85bf8b23c0188fe6b24b785f46c4caffb1911b4
+    steps:
+      - checkout
+      - run:
+          name: Launch tmux config for 2.6
+          command: test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
+      - run:
+          name: Validate tmux config for 2.6
+          command: cat tmux-* | grep 'invalid'; test $? -eq 1
 
 workflows:
   version: 2
@@ -23,3 +35,4 @@ workflows:
     jobs:
       - lint
       - test
+      - test-tmux
