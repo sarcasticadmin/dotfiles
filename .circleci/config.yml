@@ -26,9 +26,14 @@ jobs:
           name: tmux config for 2.6
           #cat tmux-*.log | grep 'invalid'; test $? -eq 1
           command: |
+            exec 1<&-
+            exec 2<&-
+            exec 1<> ./output.log
+            exec 2>&1
             test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
             cat tmux-*.log
             uname -a
+            cp ./output.log $CIRCLE_ARTIFACTS
 
 workflows:
   version: 2
