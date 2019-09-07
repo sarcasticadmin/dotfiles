@@ -28,6 +28,7 @@ jobs:
           command: |
             test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
             cat tmux-*.log
+            uname -a
 
 workflows:
   version: 2
