@@ -23,11 +23,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Launch tmux config for 2.6
-          command: test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
-      - run:
-          name: Validate tmux config for 2.6
-          command: cat tmux-*.log | grep 'invalid'; test $? -eq 1
+          name: tmux config for 2.6
+          command: |
+            test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
+            cat tmux-*.log | grep 'invalid'; test $? -eq 1
 
 workflows:
   version: 2
