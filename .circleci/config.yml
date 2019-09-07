@@ -24,9 +24,10 @@ jobs:
       - checkout
       - run:
           name: tmux config for 2.6
+          #cat tmux-*.log | grep 'invalid'; test $? -eq 1
           command: |
             test -f ./tmux/.tmux.conf && tmux -vv -f ./tmux/.tmux.conf new -d
-            cat tmux-*.log | grep 'invalid'; test $? -eq 1
+            cat tmux-*.log
 
 workflows:
   version: 2
