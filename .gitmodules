@@ -31,3 +31,9 @@
 [submodule "vim/.vim/bundle/vim-go-slide"]
 	path = vim/.vim/bundle/vim-go-slide
 	url = https://github.com/zchee/vim-go-slide
+[submodule "vim/.vim/bundle/vim-rego"]
+	path = vim/.vim/bundle/vim-rego
+	url = https://github.com/tsandall/vim-rego.git
+[submodule "vim/.vim/bundle/vim-autoformat"]
+	path = vim/.vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat.git

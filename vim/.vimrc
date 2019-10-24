@@ -40,6 +40,7 @@ autocmd BufEnter *.py colorscheme icansee
 autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
 autocmd BufEnter *.go colorscheme icansee
+autocmd BufEnter *.rego colorscheme icansee
 autocmd BufEnter *.yaml colorscheme vividchalk
 autocmd BufEnter *.yml colorscheme vividchalk
 
@@ -54,6 +55,12 @@ autocmd FileType make setlocal noexpandtab
 
 " Enable spellcheck for commit messages
 autocmd FileType gitcommit setlocal spell
+
+" Autoformat plugin and whitelist
+" this plugin requires python be avaible in $PATH
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_verbosemode = 0
 
 " Pythonisms
 let g:autopep8_max_line_length=120
@@ -83,6 +90,12 @@ autocmd BufRead,BufNewFile *.slide set filetype=slide
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
 autocmd BufNewFile *.yaml,*.yml 0r ~/.vim/templates/skeleton.yaml
+
+" Rego
+let g:formatdef_rego = '"opa fmt"'
+let g:formatters_rego = ['rego']
+" Default to always autofmt rego
+autocmd BufWritePre *.rego Autoformat
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
