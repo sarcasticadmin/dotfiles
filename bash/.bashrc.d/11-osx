@@ -1,5 +1,5 @@
 # shellcheck disable=SC2148
-# vi:syntax=sh
+# vi:filetype=sh
 
 # OSX Platform specifics
 # shellcheck disable=SC2154

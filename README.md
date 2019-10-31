@@ -51,7 +51,17 @@ cd ~/dotfiles
 make CONFIG=./make/workstation-pkgs.mk unstow
 ```
 
-## Updating
+## Submodule Updating
+### Update to match this repo
+
+If submodules are bumped to a newer ref and then committed. Other repos pulling this repo down
+need to do the following in additition to `git pull --rebase upstream master`:
+
+```
+git submodule update
+```
+> This will update all refs that might still show as diffs in `master`
+
 ### vim bundles
 Individual update of a vim plugin
 ```bash

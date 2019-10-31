@@ -40,6 +40,7 @@ autocmd BufEnter *.py colorscheme icansee
 autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
 autocmd BufEnter *.go colorscheme icansee
+autocmd BufEnter *.rego colorscheme icansee
 autocmd BufEnter *.yaml colorscheme vividchalk
 autocmd BufEnter *.yml colorscheme vividchalk
 
@@ -55,9 +56,17 @@ autocmd FileType make setlocal noexpandtab
 " Enable spellcheck for commit messages
 autocmd FileType gitcommit setlocal spell
 
+" Autoformat plugin and whitelist
+" this plugin requires python be avaible in $PATH
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_verbosemode = 0
+" Toggle autofmt whitelist for fmt func
+let g:my_autofmt_whitelist = ['sh', 'python']
+
 " Pythonisms
-let g:autopep8_max_line_length=120
-let g:autopep8_disable_show_diff=1
+let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
+let g:formatters_python = ['autopep8']
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
@@ -83,6 +92,12 @@ autocmd BufRead,BufNewFile *.slide set filetype=slide
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
 autocmd BufNewFile *.yaml,*.yml 0r ~/.vim/templates/skeleton.yaml
+
+" Rego
+let g:formatdef_rego = '"opa fmt"'
+let g:formatters_rego = ['rego']
+" Default to always autofmt rego
+autocmd BufWritePre *.rego Autoformat
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
@@ -138,15 +153,19 @@ endfunction
 
 " fmt
 " to check format use: set filetype?
+"
+" This is specifically for languages that havent historically
+" had a autofmt type of implementation
 function! <SID>fmt()
   if &ft == "json"
     "python35+ doesnt sort keys alpha by default
     "https://hg.python.org/cpython/rev/58a871227e5b
     %!if [ $(command -v python3) ];then python3 -m json.tool;else python -m json.tool;fi
     echo "fmt json"
-  elseif &ft == "python"
-    call Autopep8()
-    echo "fmt python"
+  elseif index(g:my_autofmt_whitelist, &ft) >= 0
+    echo "enabling fmt for" &ft
+    autocmd BufWritePre * Autoformat
+    execute ':w'
   elseif &ft == "cert"
     "set textwidth=64
     "call :gq

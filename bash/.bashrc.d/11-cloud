@@ -1,5 +1,5 @@
 # shellcheck disable=SC2148
-# vi:syntax=sh
+# vi:filetype=sh
 # cloud aliases
 
 # Mapping AWS code to region (.i.e. N. Virginia => us-east-1)
@@ -12,3 +12,27 @@ aws-region() {
     echo "$regions" | jq -r '.[] | [ .code, .name ] | @tsv'
   fi
 }
+
+if command -v aws > /dev/null 2>&1; then
+  # Generate a temporary set of AWS credentials
+  # Useful when tool require AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+  # Make sure to export AWS_SESSION_TOKEN as well
+  aws-temp-keys() {
+    # shellcheck disable=SC2068
+    aws sts assume-role --role-session-name temp-"$(date +%s)" $@
+  }
+
+  # Clean up the mess of AWS credentials if any are set
+  aws-env-clean() {
+    unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_PROFILE AWS_DEFAULT_REGION AWS_REGION
+  }
+
+  # Set env of AWS credentials I cant remember
+  aws-env-set() {
+    exs=(AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN)
+    for ex in "${exs[@]}";do
+      read -rp "Enter ${ex}: " resp
+      export "$ex"="$resp"
+    done
+  }
+fi

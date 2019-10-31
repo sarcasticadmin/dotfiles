@@ -94,6 +94,7 @@ export LESS_TERMCAP_ue=$'\e[0m'              # reset underline
 alias ll="ls -lah"
 alias tmux="tmux -2"
 alias diff="diff -u"
+alias def="type"
 # Allows for piping vim doc
 alias pvim="(trap 'rm ~/temp$$' exit; vim -c 'setlocal spell' ~/temp$$ >/dev/tty; cat ~/temp$$)"
 

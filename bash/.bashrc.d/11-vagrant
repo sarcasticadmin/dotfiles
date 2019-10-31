@@ -1,5 +1,6 @@
 # shellcheck disable=SC2148
-# vi:syntax=sh
+# vi:filetype=sh
+
 # vagrant specifics
 if command -v vagrant > /dev/null 2>&1; then
   # Disable vagrant box warning
