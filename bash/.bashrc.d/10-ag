@@ -1,5 +1,5 @@
 # shellcheck disable=SC2148
-# vi:syntax=sh
+# vi:filetype=sh
 # silver searcher specifics
 if command -v ag > /dev/null 2>&1; then
   # shellcheck disable=SC2016

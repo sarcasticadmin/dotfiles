@@ -1,5 +1,5 @@
 # shellcheck disable=SC2148
-# vi:syntax=sh
+# vi:filetype=sh
 # go specifics
 if command -v go > /dev/null 2>&1; then
   export GOPATH="${HOME}/go"
