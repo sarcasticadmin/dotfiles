@@ -4,6 +4,8 @@
 [core]
   editor = vim
   pager  = less -R
+[advice]
+  pushNonFastForward = false
 [stash]
   showPatch = true
 [diff]
