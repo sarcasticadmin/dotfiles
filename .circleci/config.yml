@@ -14,8 +14,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Doc Dir Check
-          command: make -f GNUMakefile test-md
+          name: Doc Dir Check using GNUmakefile
+          command: make test-md
 
 workflows:
   version: 2

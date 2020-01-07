@@ -31,10 +31,7 @@ make CONFIG=./make/workstation-pkgs.mk submodules stow
 
 ### Alternatives
 
-If installing on `Linux` or `OSX` use the `GNUMakefile`:
-```bash
-make -f GNUMakefile stow
-```
+* If installing on `Linux` or `OSX` itll leverage the `GNUmakefile` instead of the BSD `Makefile`
 
 #### Submodules
 
@@ -63,6 +60,7 @@ git submodule update
 > This will update all refs that might still show as diffs in `master`
 
 ### vim bundles
+
 Individual update of a vim plugin
 ```bash
 cd ~/dotfiles/vim/.vim/bundle/salt
