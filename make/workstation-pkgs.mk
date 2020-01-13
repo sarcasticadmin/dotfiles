@@ -8,6 +8,7 @@ gcloud
 git
 gnupg
 i3
+linopen
 mariadb
 newsboat
 pyenv
