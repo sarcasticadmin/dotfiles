@@ -6,6 +6,7 @@ Because I can never remember some of these things:
 * [aws](./AWS.md)
 * [bhyve](./BHYVE.md)
 * [docker](./DOCKER.md)
+* [freebsd](./FREEBSD.md)
 * [git](./GIT.md)
 * [ham](./HAM.md)
 * [kermit](./KERMIT.md)
