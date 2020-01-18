@@ -7,6 +7,7 @@ Because I can never remember some of these things:
 * [bhyve](./BHYVE.md)
 * [docker](./DOCKER.md)
 * [git](./GIT.md)
+* [pipx](./PIPX.md)
 * [podcasts](./PODCASTS.md)
 * [ruby](./RUBY.md)
 * [rbenv](./RBENV.md)
