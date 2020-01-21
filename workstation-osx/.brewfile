@@ -23,6 +23,7 @@ brew "gnu-tar", args: ["with-default-names"]
 brew "gnu-which", args: ["with-default-names"]
 brew "gnutls"
 brew "go"
+brew "ghostscript"
 brew "graphviz"
 brew "grep", args: ["with-default-names"]
 brew "gzip"
