@@ -10,6 +10,15 @@ if command -v pyenv 1> /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# pipx the pipsi 3.x replacement
+# pipx will come from system pkg manager
+# Throw all pipsi install python bins into
+# home dir bin
+if command -v pipx > /dev/null 2>&1; then
+  export PIPX_BIN_DIR="$HOME/bin"
+fi
+
+# TODO: Remove pipsi once 2.7 finally dies
 # Throw all pipsi install python bins into
 # home dir bin
 if command -v pipsi > /dev/null 2>&1; then
