@@ -66,6 +66,10 @@ set_network $NETWORK_ID key_mgmt NONE
 save_config
 EOF
   else
+    # TODO Make this nicer
+    if [ $PSK == "-p" ];then
+      read -p "Enter in pass: " PSK
+    fi
     wpa_cli << EOF
 set_network $NETWORK_ID ssid "$SSID"
 set_network $NETWORK_ID psk "$PSK"
