@@ -61,7 +61,7 @@ brew "weechat"
 brew "wget"
 
 cask "1password"
-cask "basictex"
+cask "mactex-no-gui"
 cask "docker"
 cask "etcher"
 cask "firefox"
