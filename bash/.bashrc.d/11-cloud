@@ -13,6 +13,14 @@ aws-region() {
   fi
 }
 
+# ec2 pubkey fingerprints arent like traditional ssh-keygen fingerprints
+# adding this so its easy to generate a fingerprint when trying to match
+# whats in the AWS console
+# Source: https://serverfault.com/questions/603982/why-does-my-openssh-key-fingerprint-not-match-the-aws-ec2-console-keypair-finger
+aws-ec2-fp() {
+  ssh-keygen -e -f "$1" -m pkcs8 | openssl pkey -pubin -outform der | openssl md5 -c
+}
+
 if command -v aws > /dev/null 2>&1; then
   # Generate a temporary set of AWS credentials
   # Useful when tool require AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
