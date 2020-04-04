@@ -81,6 +81,9 @@ HISTTIMEFORMAT='%F %T '
 # Set other preferences
 export PAGER="less -s -M +Gg"
 
+# Leave manpage place on screen after exit
+export MANPAGER="/usr/bin/env less -X -is"
+
 # Color for manpages
 export LESS_TERMCAP_mb=$'\e[1;31m'           # begin bold
 export LESS_TERMCAP_md=$'\e[1;38;5;208m'     # begin blink
