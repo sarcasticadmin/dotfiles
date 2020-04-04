@@ -2,6 +2,7 @@
 backgrounds
 .sync-conflict*
 .stfolder
+bash/.bashrc.d/99*
 
 ### Newsboat ###
 newsboat*/.newsboat/cache.db
