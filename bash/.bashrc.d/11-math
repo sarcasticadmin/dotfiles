@@ -1,0 +1,11 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+megs(){
+  i=${1:-$(</dev/stdin)};
+  echo "scale=2; $i / 1024^2" | bc
+}
+
+gigs(){
+  i=${1:-$(</dev/stdin)};
+  echo "scale=4; $i / 1024^3" | bc
+}
