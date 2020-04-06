@@ -8,6 +8,7 @@ Because I can never remember some of these things:
 * [docker](./DOCKER.md)
 * [git](./GIT.md)
 * [ham](./HAM.md)
+* [kermit](./KERMIT.md)
 * [pipx](./PIPX.md)
 * [podcasts](./PODCASTS.md)
 * [ruby](./RUBY.md)

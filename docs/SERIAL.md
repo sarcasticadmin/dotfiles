@@ -1,5 +1,7 @@
 # Serial
 
+Also see: [Kermit](./KERMIT.md)
+
 ## Modifying TTY
 
 ```
