@@ -1,0 +1,13 @@
+set line /dev/cuaU0
+;ablity to override line via arg "i.e. = /dev/ttyUSB0"
+if defined \%1 set line \%1
+set speed 9600
+set carrier-watch off
+set flow-control none
+set handshake none
+set prefixing all
+set streaming off
+set parity none
+set stop-bits 1
+eightbit
+connect
