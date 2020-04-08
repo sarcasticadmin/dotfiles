@@ -5,6 +5,7 @@ Notes about some of my explorations into HAM radio
 * Chirp: https://chirp.danplanet.com/projects/chirp/wiki/Home
 * APRS: https://aprs.fi/
 * Exhaustive list of HAM hardware reviews: https://www.eham.net/review
+* Packet Radio Primer: https://www.vhfclub.org/packet_radio_primer.html
 
 ## Packet Radio
 
@@ -20,3 +21,7 @@ Successor to the `TNC-X` and `TNC-pi`. Still in development
 https://tnc-x.com/
 
 `TNC-X` clone from MFJ: http://www.mfjenterprises.com/Product.php?productid=MFJ-1270X
+
+### Kantronics 3+
+
+Manual: https://kantronics.com/wp-content/uploads/2018/10/KPC-3Plus-Manual-RevH.pdf
