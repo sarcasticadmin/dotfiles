@@ -78,11 +78,21 @@ HISTCONTROL='ignoredups'
 # format example: 8000  2019-05-31 00:39:40 ps aux
 HISTTIMEFORMAT='%F %T '
 
-# Set other preferences
-export PAGER="less -s -M +Gg"
+# less-isms
 
-# Leave manpage place on screen after exit
-export MANPAGER="/usr/bin/env less -X -is"
+# Global less options
+# Be mindful not to put "+Gg" here since less can't know its percent
+# into the file it is until it knows how long the file is and this is
+# problematic in pipes
+# https://stackoverflow.com/questions/1049350/how-to-make-less-indicate-location-in-percentage
+export LESS="-isM"
+
+# For set preference for things using PAGER env var
+export PAGER="less +Gg"
+
+# Leave manpage place on screen after exit and set preference to read entire
+# file and start back at the beginning to get percentage info
+export MANPAGER="/usr/bin/env less -X +Gg"
 
 # Color for manpages
 export LESS_TERMCAP_mb=$'\e[1;31m'           # begin bold
