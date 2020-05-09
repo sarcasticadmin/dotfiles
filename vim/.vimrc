@@ -36,6 +36,7 @@ set spellfile=~/.vim/spell/tech.utf-8.add
 " Define a colorscheme
 "colorscheme vividchalk
 autocmd BufEnter * colorscheme vibrantink
+autocmd BufEnter *.nix colorscheme vibrantink
 autocmd BufEnter *.py colorscheme icansee
 autocmd BufEnter *.rb colorscheme icansee
 autocmd BufEnter *.tf* colorscheme icansee
@@ -90,6 +91,8 @@ let g:go_gopls_enabled = 0
 " go-vim ignore warnings for vim < 7.4.1689
 let g:go_version_warning = 0
 autocmd BufRead,BufNewFile *.slide set filetype=slide
+
+autocmd BufRead,BufNewFile *.nix set filetype=nix
 
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
