@@ -1,5 +1,41 @@
 # FreeBSD
 
+## Updating
+
+Typically do single branch clones of `/usr/src` so that it doesnt take up too much space:
+
+```
+git clone <url> --branch <branch> --single-branch /usr/src
+```
+
+Move to a new branch/release
+
+```
+git remote set-branches --add upstream releng/12.1
+git fetch upstream releng/12.1
+git checkout releng/12.1
+```
+
+Build FreeBSD:
+
+```
+make buildworld && make buildkernel && make installkernel && make installworld
+```
+
+Post upgrade make sure to run `mergemaster`:
+
+```
+mergemaster -Ui
+```
+
+Update pkgng:
+
+```
+pkg-static install -f pkg
+pkg update
+pkg upgrade
+```
+
 ## Kernel Dump
 
 Set `dumpdev=AUTO` in its `/etc/rc.conf`, and have sufficiently large swap partition, configured at boot time.
