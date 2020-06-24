@@ -102,7 +102,7 @@ vm create -t ubuntu -i ubuntu-18.04-server-cloudimg-amd64.img -s 80G -C -k /root
 ```
 > NOTE: Make sure -k <key> has correct read permissions
 
-
 ## Refs:
 
 1. Good `vm-bhyve` guide: https://www.davd.io/install-ubuntu-on-freebsd-with-bhyve/
+2. Grow Linux vm: https://askubuntu.com/questions/116351/increase-partition-size-on-which-ubuntu-is-installed/116367
