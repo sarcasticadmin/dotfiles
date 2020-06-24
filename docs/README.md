@@ -10,6 +10,7 @@ Because I can never remember some of these things:
 * [git](./GIT.md)
 * [ham](./HAM.md)
 * [kermit](./KERMIT.md)
+* [ninotnc](./NINOTNC.md)
 * [pipx](./PIPX.md)
 * [podcasts](./PODCASTS.md)
 * [ruby](./RUBY.md)
