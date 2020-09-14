@@ -4,6 +4,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Get os platform
+os_platform=$(uname -s)
+
 #####
 #
 # Functions
@@ -124,8 +127,10 @@ if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-# Get os platform
-os_platform=$(uname -s)
+# The only OSXism Im willing to tolerate 
+if [ ${os_platform} != "Darwin" ];then
+  alias pbcopy="xsel --clipboard"
+fi
 
 # POSIX substring parameter expansion
 if [ "$TERM" != "256color" ]; then
