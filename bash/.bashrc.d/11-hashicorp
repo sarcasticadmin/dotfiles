@@ -1,0 +1,7 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+
+# hashicorp tool specifics
+# Disable any autocheck warning
+# https://www.terraform.io/docs/commands/index.html#upgrade-and-security-bulletin-checks
+export CHECKPOINT_DISABLE=yes
