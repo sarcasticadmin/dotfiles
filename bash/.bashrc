@@ -91,7 +91,9 @@ HISTTIMEFORMAT='%F %T '
 export LESS="-isM"
 
 # For set preference for things using PAGER env var
-export PAGER="less +Gg"
+# Plus pass through ANSI escape sequences to render color
+# on the terminal
+export PAGER="less +Gg -R"
 
 # Leave manpage place on screen after exit and set preference to read entire
 # file and start back at the beginning to get percentage info
