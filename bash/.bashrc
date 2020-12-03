@@ -7,6 +7,9 @@
 # Get os platform
 os_platform=$(uname -s)
 
+# Which elevation util
+elevate=$(command -v sudo || command -v doas)
+
 #####
 #
 # Functions
@@ -47,6 +50,23 @@ ssh_agent_setup() {
     fi
     export SSH_AUTH_SOCK
   fi
+}
+
+user_confirm() {
+  read -r -p "Are you sure? [y/N] " response
+  case "$response" in
+      [yY][eE][sS]|[yY])
+          return 0
+	  ;;
+      *)
+	  return 1
+	  ;;
+  esac
+}
+
+
+nukepart() {
+  user_confirm && ${elevate} dd if=/dev/urandom bs=1M count=2 of="$1"
 }
 
 # Look at my default knobs
@@ -129,7 +149,7 @@ if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-# The only OSXism Im willing to tolerate 
+# The only OSXism Im willing to tolerate
 if [ ${os_platform} != "Darwin" ];then
   alias pbcopy="xsel --clipboard"
 fi
