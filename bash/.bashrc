@@ -223,4 +223,4 @@ rcfiles=$(ls ${HOME}/.bashrc.d/* 2>/dev/null)
 for file in $rcfiles; do
     source $file
 done
-unset rcfiles
+unset rcfiles os_platform elevate
