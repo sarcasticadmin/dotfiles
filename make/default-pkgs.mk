@@ -4,6 +4,7 @@ bin
 dircolors
 gcloud
 git
+gnureadline
 mariadb
 ruby
 tmux

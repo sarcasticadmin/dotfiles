@@ -44,3 +44,4 @@
 
 [include]
   path = ~/.gitconfig.d/hub
+  path = ~/.gitconfig.d/99-work
