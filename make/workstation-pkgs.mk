@@ -7,6 +7,7 @@ fonts
 gcloud
 git
 gnupg
+gnureadline
 i3
 linopen
 mariadb
