@@ -30,6 +30,14 @@ syntax on
 " Enable plugins
 filetype plugin indent on
 
+" Automatically create `~/.vim/.tmp directory, writable by the group
+" Move swp and undo to anywhere but the cwd
+" dont create backup
+silent execute '!umask 002; mkdir -p ~/.vim/.tmp/'
+set directory=~/.vim/.tmp//,/tmp//
+set undodir=~/.vim/.tmp//,/tmp//
+set nobackup
+
 " Custom dictionary
 set spellfile=~/.vim/spell/tech.utf-8.add
 
