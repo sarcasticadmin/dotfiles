@@ -9,6 +9,7 @@ Because I can never remember some of these things:
 * [freebsd](./FREEBSD.md)
 * [git](./GIT.md)
 * [ham](./HAM.md)
+* [juniper](./JUNIPER.md)
 * [kermit](./KERMIT.md)
 * [ninotnc](./NINOTNC.md)
 * [pipx](./PIPX.md)
