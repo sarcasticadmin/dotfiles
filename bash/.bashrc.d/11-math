@@ -9,3 +9,8 @@ gigs(){
   i=${1:-$(</dev/stdin)};
   echo "scale=4; $i / 1024^3" | bc
 }
+
+# seconds elapsed since the Unix epoch
+epoch(){
+  date +%s
+}
