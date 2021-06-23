@@ -69,13 +69,14 @@ autocmd FileType gitcommit setlocal spell
 " this plugin requires python be avaible in $PATH
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
-let g:autoformat_verbosemode = 0
+let g:autoformat_verbosemode = 1
+
 " Toggle autofmt whitelist for fmt func
-let g:my_autofmt_whitelist = ['sh', 'python']
+let g:my_autofmt_whitelist = ['sh', 'python', 'nix']
 
 " Pythonisms
-let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
 let g:formatters_python = ['autopep8']
+let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
@@ -100,7 +101,14 @@ let g:go_gopls_enabled = 0
 let g:go_version_warning = 0
 autocmd BufRead,BufNewFile *.slide set filetype=slide
 
+" Nix
 autocmd BufRead,BufNewFile *.nix set filetype=nix
+" Identifier just needs to be uniq since itll shell out
+" based on the formatdef_*
+"
+" Cannot get hyphens in vars
+let g:formatters_nix = ['nixpkgs_fmt']
+let g:formatdef_nixpkgs_fmt = "'nixpkgs-fmt'"
 
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
@@ -165,7 +173,7 @@ function! <SID>CheckSpelling()
 endfunction
 
 " fmt
-" to check format use: set filetype?
+" to check format use: set filetype? i.e. buffer's filetype
 "
 " This is specifically for languages that havent historically
 " had a autofmt type of implementation
@@ -175,17 +183,21 @@ function! <SID>fmt()
     "https://hg.python.org/cpython/rev/58a871227e5b
     %!if [ $(command -v python3) ];then python3 -m json.tool;else python -m json.tool;fi
     echo "fmt json"
+  " Only fmt on whitelisted languages that way
+  " I dont get any crazy surprises about defaults
+  "
+  " Havent found a good way to detect calling Autoformat
+  " to be able to toggle it on and off
   elseif index(g:my_autofmt_whitelist, &ft) >= 0
-    echo "enabling fmt for" &ft
-    autocmd BufWritePre * Autoformat
-    execute ':w'
+    autocmd BufWrite * Autoformat
+    echo "fmt" &ft
   elseif &ft == "cert"
     "set textwidth=64
     "call :gq
     "execute "normal! gq"
     echo "fmt cert [not implemented]"
   else
-    echo "no filetype match for fmt"
+    echo "no fmt filetype match for:" &ft
   endif
 endfunction
 
