@@ -6,6 +6,8 @@ Notes about some of my explorations into HAM radio
 * APRS: https://aprs.fi/
 * Exhaustive list of HAM hardware reviews: https://www.eham.net/review
 * Packet Radio Primer: https://www.vhfclub.org/packet_radio_primer.html
+* Pre-made cables: https://hammadeparts.com/
+* Radio Mobile Online (Antenna Calculations): https://www.ve2dbe.com/rmonline_s.asp
 
 ## Packet Radio
 

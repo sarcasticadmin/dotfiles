@@ -1,0 +1,7 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+# Figure out if we system is on UEFI or Legacy
+# TODO: Figure out FreeBSD "tells" for this
+isefi(){
+  [ -d /sys/firmware/efi/efivars ] && echo "UEFI" || echo "Legacy"
+}
