@@ -14,3 +14,37 @@ gigs(){
 epoch(){
   date +%s
 }
+
+# Pass in how many days from today youd like to calculate
+weekdays(){
+  burn=${1}
+  next_day=0
+  i=0
+  day=""
+  # shellcheck disable=SC2086
+  while [ $next_day = 0 ] || [ $next_day = 6 ]; do
+    next_day=$(date -d "${i} day" "+%w")
+    ((i=i+1))
+  done
+  start_day=$(date -d "${i} days" "+%Y-%m-%d")
+  remaining=0
+  # shellcheck disable=SC2086
+  while [ $remaining -lt $burn ];do
+    if [ -z $day ];then
+      day=$start_day
+    else
+      day=$(date -d "$day+1 day" "+%Y-%m-%d")
+    fi
+
+    # check for weekend
+    check=$(date -d "$day" "+%w")
+    # shellcheck disable=SC2086
+    if [ $check = 0 ] || [ $check = 6 ]; then
+      continue
+    else
+      ((remaining=remaining+1))
+    fi
+  done
+
+  date -d "$day" "+%Y-%m-%d"
+}

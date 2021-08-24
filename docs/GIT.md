@@ -24,3 +24,12 @@ cat << EOF > ~/.config/hub
   protocol: https
 ```
 > NOTE: This can be repeated n times
+
+## Submodule
+
+Removing submodules was nice and easy doing:
+
+```
+git submodule deinit <path_to_submodule>
+git rm <path_to_submodule>
+```

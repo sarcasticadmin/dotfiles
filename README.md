@@ -26,7 +26,7 @@ git clone git@github.com/sarcasticadmin/dotfiles.git
 Call `make` to stow based on predefined `pkgs.mk`
 ```bash
 cd ~/dotfiles
-make CONFIG=./make/workstation-pkgs.mk submodules stow
+make CONFIG=./make/workstation-pkgs.mk world
 ```
 
 ### Alternatives
@@ -59,17 +59,19 @@ git submodule update
 ```
 > This will update all refs that might still show as diffs in `master`
 
-### vim bundles
+### git submodules
 
-Individual update of a vim plugin
+Individual update of rbenv:
+
 ```bash
 cd ~/dotfiles/vim/.vim/bundle/salt
 git pull origin master
 ```
 
-Bulk upgrade all plugins:
+Bulk upgrade all mutliple git submodules:
+
 ```bash
-cd ~/dotfiles/vim/.vim/
+cd <to submodules dir>
 git submodule foreach git pull origin master
 ```
 

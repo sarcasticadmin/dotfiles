@@ -22,6 +22,7 @@ weechat/.weechat/sec.conf
 
 ### other vim ###
 vim/.vim/spell/*.spl
+vim/.vim/plugged/
 
 ### awscli  ###
 aws/.aws/cli/cache/

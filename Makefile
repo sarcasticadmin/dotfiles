@@ -23,3 +23,9 @@ test-md:
 	  echo "Docs Look good!"
 
 test: test-md
+
+# Install the plugins defined in .vimrc
+vim-plug:
+	vim -T dumb -c ":PlugInstall" -c ":q" -c ":q"
+
+world: submodules stow vim-plug
