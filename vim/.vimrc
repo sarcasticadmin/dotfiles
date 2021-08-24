@@ -21,9 +21,6 @@ set ignorecase
 " but if user types uppercase - search exactly
 set smartcase
 
-" Use pathogen to manage vim plugins
-call pathogen#infect()
-
 " Syntax Toggle
 syntax on
 
