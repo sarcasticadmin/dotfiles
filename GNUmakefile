@@ -18,3 +18,9 @@ test-md:
 	find . -mindepth 2 -type f -iname '*.md' \! \( -path './docs/*' \)
 
 test: test-md
+
+# Install the plugins defined in .vimrc
+vim-plug:
+	vim -T dumb -c ":PlugInstall" -c ":q" -c ":q"
+
+world: submodules stow vim-plug
