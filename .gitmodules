@@ -10,6 +10,3 @@
 [submodule "pyenv/.pyenv"]
 	path = pyenv/.pyenv
 	url = https://github.com/pyenv/pyenv.git
-[submodule "vim/.vim/bundle/vim-autoformat"]
-	path = vim/.vim/bundle/vim-autoformat
-	url = https://github.com/Chiel92/vim-autoformat.git
