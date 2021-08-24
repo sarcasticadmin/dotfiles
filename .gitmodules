@@ -1,6 +1,3 @@
-[submodule "vim/.vim/bundle/syntastic"]
-	path = vim/.vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "vim/.vim/bundle/terraform"]
 	path = vim/.vim/bundle/terraform
 	url = https://github.com/hashivim/vim-terraform.git
