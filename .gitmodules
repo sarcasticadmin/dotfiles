@@ -19,9 +19,6 @@
 [submodule "vim/.vim/bundle/vim-autopep8"]
 	path = vim/.vim/bundle/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
-[submodule "vim/.vim/bundle/vim-rego"]
-	path = vim/.vim/bundle/vim-rego
-	url = https://github.com/tsandall/vim-rego.git
 [submodule "vim/.vim/bundle/vim-autoformat"]
 	path = vim/.vim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
