@@ -133,6 +133,8 @@ alias ll="ls -lah"
 alias tmux="tmux -2"
 alias diff="diff -u"
 alias def="type"
+# mimic the tcsh rehash
+alias rehash="hash -r"
 # Allows for piping vim doc
 alias pvim="(trap 'rm ~/temp$$' exit; vim -c 'setlocal spell' ~/temp$$ >/dev/tty; cat ~/temp$$)"
 
