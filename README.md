@@ -77,4 +77,5 @@ git submodule foreach git pull origin master
 
 ## Docs
 
-[See more documentation](./docs/README.md)
+- [bootstrap misc](./_bootstrap/README.md)
+- [See more documentation](./docs/README.md)
