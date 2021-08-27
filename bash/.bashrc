@@ -151,7 +151,9 @@ fi
 
 # The only OSXism Im willing to tolerate
 if [ ${os_platform} != "Darwin" ];then
-  alias pbcopy="xsel --clipboard"
+  if command -v xsel > /dev/null 2>&1; then
+    alias pbcopy="xsel --clipboard"
+  fi
 fi
 
 # POSIX substring parameter expansion
