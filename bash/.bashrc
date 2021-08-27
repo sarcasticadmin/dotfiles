@@ -133,6 +133,8 @@ alias ll="ls -lah"
 alias tmux="tmux -2"
 alias diff="diff -u"
 alias def="type"
+# mimic the tcsh rehash
+alias rehash="hash -r"
 # Allows for piping vim doc
 alias pvim="(trap 'rm ~/temp$$' exit; vim -c 'setlocal spell' ~/temp$$ >/dev/tty; cat ~/temp$$)"
 
@@ -151,7 +153,9 @@ fi
 
 # The only OSXism Im willing to tolerate
 if [ ${os_platform} != "Darwin" ];then
-  alias pbcopy="xsel --clipboard"
+  if command -v xsel > /dev/null 2>&1; then
+    alias pbcopy="xsel --clipboard"
+  fi
 fi
 
 # POSIX substring parameter expansion
