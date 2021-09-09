@@ -26,6 +26,7 @@ vim/.vim/plugged/
 
 ### awscli  ###
 aws/.aws/cli/cache/
+aws/.aws/credentials
 
 ### git ###
 git/.gitconfig.d/hub
