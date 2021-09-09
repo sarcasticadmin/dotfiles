@@ -138,6 +138,10 @@ alias rehash="hash -r"
 # Allows for piping vim doc
 alias pvim="(trap 'rm ~/temp$$' exit; vim -c 'setlocal spell' ~/temp$$ >/dev/tty; cat ~/temp$$)"
 
+# Turnoff any command not found "features"
+# Ubuntu is the biggest abuser here
+type -p command_not_found_handle && unset command_not_found_handle
+
 # Save my sanity from long dirs
 if [[ -d "$HOME/symlinks" ]]; then
   export CDPATH=${HOME}/symlinks
