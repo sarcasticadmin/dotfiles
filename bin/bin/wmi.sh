@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-curl --max-time 10 https://canihazip.com/s
+curl --max-time 10 https://ifconfig.me/ip
