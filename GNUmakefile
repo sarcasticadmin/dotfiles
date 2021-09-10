@@ -23,4 +23,8 @@ test: test-md
 vim-plug:
 	vim -T dumb -c ":PlugInstall" -c ":q" -c ":q"
 
+# Assumes plug entries have been removed from .vimrc
+vim-plug-clean:
+	vim -T dumb -c ":PlugClean!" -c ":q" -c ":q"
+
 world: submodules stow vim-plug
