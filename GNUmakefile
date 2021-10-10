@@ -2,6 +2,8 @@ CONFIG = make/default-pkgs.mk
 PKGS := $(shell cat $(CONFIG))
 STOW := $(shell command -v stow 2> /dev/null)
 
+include _include/*.mk
+
 $(HOME)/bin:
 	mkdir -p ${HOME}/bin
 
