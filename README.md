@@ -26,7 +26,7 @@ git clone git@github.com/sarcasticadmin/dotfiles.git
 Call `make` to stow based on predefined `pkgs.mk`
 ```bash
 cd ~/dotfiles
-make CONFIG=./make/workstation-pkgs.mk world
+make CONFIG=./_make/workstation-pkgs.mk world
 ```
 
 ### Alternatives
@@ -45,7 +45,7 @@ git submodule update --init
 Call `make` to unstow based on predefined `workstation-pkgs.mk`
 ```bash
 cd ~/dotfiles
-make CONFIG=./make/workstation-pkgs.mk unstow
+make CONFIG=./_make/workstation-pkgs.mk unstow
 ```
 
 ## Submodule Updating

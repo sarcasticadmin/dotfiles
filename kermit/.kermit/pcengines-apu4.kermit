@@ -1,6 +1,4 @@
-set line /dev/cuaU0
-;ablity to override line via arg "i.e. = /dev/ttyUSB0"
-if defined \%1 set line \%1
+set line /dev/ttyUSB0
 set speed 115200
 set carrier-watch off
 set flow-control none

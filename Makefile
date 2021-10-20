@@ -1,6 +1,9 @@
-CONFIG = make/default-pkgs.mk
+CONFIG = _make/default-pkgs.mk
 PKGS != cat $(CONFIG)
 STOW != command -v stow 2> /dev/null
+
+# TODO: Wildcard this like GNUmake
+.include "_include/vim.mk"
 
 $(HOME)/bin:
 	mkdir -p ${HOME}/bin
