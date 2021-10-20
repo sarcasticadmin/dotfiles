@@ -1,4 +1,4 @@
-CONFIG = make/default-pkgs.mk
+CONFIG = _make/default-pkgs.mk
 PKGS := $(shell cat $(CONFIG))
 STOW := $(shell command -v stow 2> /dev/null)
 
