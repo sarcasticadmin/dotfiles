@@ -28,7 +28,8 @@ bind-key J next-feed
 goto-first-unread no
 goto-next-feed no
 
-# Reload on start and xx min
+# No Reload on start but autoreload after xx min
+suppress-first-reload yes
 auto-reload yes
 reload-time 30
 reload-threads 4
