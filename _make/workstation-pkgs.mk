@@ -1,4 +1,5 @@
 Xdefaults
+Xmodmap
 aws
 bash
 bin
