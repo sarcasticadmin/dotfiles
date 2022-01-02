@@ -1,0 +1,13 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
+
+demo(){
+  PS1BAK="$PS1"
+  PS1='$ '
+}
+
+udemo(){
+  test -z "$PS1BAK" && return
+  PS1="$PS1BAK"
+  unset PS1BAK
+}
