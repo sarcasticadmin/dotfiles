@@ -119,6 +119,7 @@ autocmd BufRead,BufNewFile *.nix set filetype=nix
 " Cannot get hyphens in vars
 let g:formatters_nix = ['nixpkgs_fmt']
 let g:formatdef_nixpkgs_fmt = "'nixpkgs-fmt'"
+autocmd BufNewFile shell.nix 0r ~/.vim/templates/nix/shell.nix
 
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
