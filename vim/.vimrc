@@ -24,6 +24,10 @@ set pastetoggle=<F2>
 set backspace=2
 set softtabstop=2 shiftwidth=2 expandtab
 
+" Force encoding to ensure it renders like it would on the terminal
+" ~@~Y for apostrophe otherwise (unicode U+0027 vs U+2019)
+set encoding=utf-8
+
 " search for upper and lowercase
 set ignorecase
 
