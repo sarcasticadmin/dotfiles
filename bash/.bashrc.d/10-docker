@@ -9,6 +9,11 @@ if command -v docker > /dev/null 2>&1; then
     docker run --rm -it "$image" "$shell"
   }
 
+  docker-sha() {
+    local image=$1
+    docker inspect --format='{{index .RepoDigests 0}}' "$image"
+  }
+
   # Override config.json for things like ps format
   if [ -d "${HOME}"/.docker.d ];then
     export DOCKER_CONFIG="${HOME}/.docker.d"
