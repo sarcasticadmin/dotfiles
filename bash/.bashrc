@@ -42,13 +42,10 @@ ssh_agent_setup() {
     # do nothing
     return
   else
-    unset SSH_AUTH_SOCK
-    if [ -e "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
-      SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-    else
-      SSH_AUTH_SOCK="/var/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
-    fi
-    export SSH_AUTH_SOCK
+    # "New" fancy way of detecting agent socket
+    # Seems to work as far back as gpg v2.2.3 (tested on OSX)
+    # https://github.com/drduh/YubiKey-Guide#replace-agents
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   fi
 }
 
