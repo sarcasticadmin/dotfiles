@@ -43,4 +43,4 @@ browser "firefox -new-tab %u"
 
 # Format UI
 feedlist-format     "%11u %t"
-articlelist-format  "%4i %f %D  %?T?|%-24T|  ?%t"
+articlelist-format  "%4i %f %D  %?T?|%-16T|  ?%t"
