@@ -34,6 +34,16 @@ set ignorecase
 " but if user types uppercase - search exactly
 set smartcase
 
+" keep the cursor at current column when jumping to other lines
+set nostartofline
+
+" use of the status line to show possible completions of : commands
+set wildmenu
+
+" set laststatus to show status line even when only one window is shown
+" typically only set when on separate multiple windows via -o
+set ls=2
+
 " Syntax Toggle
 syntax on
 
