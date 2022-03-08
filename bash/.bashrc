@@ -82,6 +82,9 @@ shopt -s cmdhist
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Obviously
+export EDITOR=vim
+
 # for setting history length see HISTSIZE bash(1)
 HISTSIZE=8000
 
