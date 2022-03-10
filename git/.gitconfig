@@ -10,6 +10,7 @@
   showPatch = true
 [diff]
   tool = icdiff
+  renameLimit = 9999
 [difftool]
   prompt = false
 [difftool "icdiff"]
@@ -32,8 +33,11 @@
     else \
       curl -L -s https://api.github.com/licenses/$@ | jq -r '.body'; \
     fi;}; gl"
+  # 10:1 ratio calculator https://www.ybrikman.com/writing/2018/08/12/the-10-to-1-rule-of-writing-and-programming/
+  # git +- / total lines of code
+  # Cloc to hammer on all cores avail
   churn   = "!gc() { \
-    echo \"scale=2; $(git log --shortstat | awk '/files changed/ {total+=$4; total+=$6} END {print total}') / $(cloc . --json | jq -r '.SUM.code')\" | bc ; \
+    echo \"scale=2; $(git log --shortstat | awk '/files changed/ {total+=$4; total+=$6} END {print total}') / $(cloc . --json --diff-timeout 20 --processes=$(nproc) | jq -r '.SUM.code')\" | bc ; \
     }; gc"
   checkout-date = "!f() { git checkout -b rh/$(date +%s); }; f"
   checkout-prev = "checkout @{-1}"
