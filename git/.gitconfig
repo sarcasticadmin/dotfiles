@@ -10,6 +10,7 @@
   showPatch = true
 [diff]
   tool = icdiff
+  renameLimit = 9999
 [difftool]
   prompt = false
 [difftool "icdiff"]
