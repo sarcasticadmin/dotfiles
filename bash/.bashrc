@@ -25,13 +25,11 @@ randpass() {
   echo
 }
 
-# Generate ssh-fingerprints given a key file:
+# Generate SHA256 fingerprints given a key file:
 #   $1 = key file
 fingerprints() {
-  local file="$1"
-  while read l; do
-    [[ -n $l && ${l###} = $l ]] && ssh-keygen -l -f /dev/stdin <<<$l
-  done < $file
+  local keyfile="${1:-${HOME}/.ssh/authorized_keys}"
+  ssh-keygen -l -E sha256 -f $keyfile
 }
 
 # Make sure ssh uses the right socket
