@@ -153,6 +153,12 @@ if &term =~ "xterm" || &term =~ "screen"
   endif
 endif
 
+
+" Abbreviations
+" inspired by: http://www.guckes.net/Setup/vimrc.mine
+" emptysha when using nix drvs
+iab emptysha      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+
 " Found at http://vimcasts.org/episodes/tidying-whitespace/
 " Toggle Trailing Whitepsace
 function! <SID>StripTrailingWhitespaces()
