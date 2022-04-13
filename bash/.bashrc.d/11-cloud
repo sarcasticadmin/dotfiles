@@ -35,8 +35,17 @@ if command -v aws > /dev/null 2>&1; then
     unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_PROFILE AWS_DEFAULT_REGION AWS_REGION
   }
 
-  # Set env of AWS credentials I cant remember
   aws-env-set() {
+    # shellcheck disable=SC2155
+    local OUT=$(aws-temp-keys "$@")
+    AWS_ACCESS_KEY_ID=$(echo "$OUT" | jq -r '.Credentials''.AccessKeyId')
+    AWS_SECRET_ACCESS_KEY=$(echo "$OUT" | jq -r '.Credentials''.SecretAccessKey')
+    AWS_SESSION_TOKEN=$(echo "$OUT" | jq -r '.Credentials''.SessionToken')
+    export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  }
+
+  # Prompt for setting env of AWS credentials I cant remember
+  aws-env-prompt() {
     exs=(AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN)
     for ex in "${exs[@]}";do
       read -rp "Enter ${ex}: " resp
