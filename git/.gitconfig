@@ -5,7 +5,10 @@
   editor = vim
   pager  = less -R
 [advice]
+  # ignore horrible advice when push fails
   pushNonFastForward = false
+  # ignore merge conflict resolution sugestions
+  resolveConflict    = false
 [stash]
   showPatch = true
 [diff]
