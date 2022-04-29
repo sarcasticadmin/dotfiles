@@ -86,7 +86,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType gitcommit setlocal spell
 
 " Autoformat plugin and whitelist
-" this plugin requires python be avaible in $PATH
+" NOTE: this plugin requires python be built into vim: vim --version
+" https://github.com/vim-autoformat/vim-autoformat#requirement
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_verbosemode = 1
