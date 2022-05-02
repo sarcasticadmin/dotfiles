@@ -86,7 +86,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType gitcommit setlocal spell
 
 " Autoformat plugin and whitelist
-" this plugin requires python be avaible in $PATH
+" NOTE: this plugin requires python be built into vim: vim --version
+" https://github.com/vim-autoformat/vim-autoformat#requirement
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_verbosemode = 1
@@ -158,6 +159,7 @@ endif
 " inspired by: http://www.guckes.net/Setup/vimrc.mine
 " emptysha when using nix drvs
 iab emptysha      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+iab dummysha      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
 
 " Found at http://vimcasts.org/episodes/tidying-whitespace/
 " Toggle Trailing Whitepsace
