@@ -14,6 +14,11 @@ if command -v docker > /dev/null 2>&1; then
     docker inspect --format='{{index .RepoDigests 0}}' "$image"
   }
 
+  docker-ip() {
+    local id=$1
+    docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$id"
+  }
+
   # Override config.json for things like ps format
   if [ -d "${HOME}"/.docker.d ];then
     export DOCKER_CONFIG="${HOME}/.docker.d"
