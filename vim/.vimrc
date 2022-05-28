@@ -201,23 +201,26 @@ function! <SID>CheckSpelling()
   endif
 endfunction
 
-" fmt
-" to check format use: set filetype? i.e. buffer's filetype
-"
-" This is specifically for languages that havent historically
-" had a autofmt type of implementation
+" fmt so I dont have to think about it
 function! <SID>fmt()
+  " TODO: see if we can move this into autofmt
   if &ft == "json"
     "python35+ doesnt sort keys alpha by default
     "https://hg.python.org/cpython/rev/58a871227e5b
     %!if [ $(command -v python3) ];then python3 -m json.tool;else python -m json.tool;fi
     echo "fmt json"
-  " Only fmt on whitelisted languages that way
-  " I dont get any crazy surprises about defaults
+  " Check to see if autofmt is already loaded
+  elseif exists("g:autofmt_loaded")
+    "only works since I dont have anything else manipulating BufWrite
+    autocmd! BufWrite *
+    echo "nofmt" &ft
+    unlet g:autofmt_loaded
+  " Only fmt on whitelisted languages that way I dont get any crazy surprises about formatting defaults on save
   "
-  " Havent found a good way to detect calling Autoformat
-  " to be able to toggle it on and off
+  " Havent found a good way to detect calling Autoformat to be able to toggle it on and off. For now well let and unlet a
+  " var to be the toggle
   elseif index(g:my_autofmt_whitelist, &ft) >= 0
+    let g:autofmt_loaded = 1
     autocmd BufWrite * Autoformat
     echo "fmt" &ft
   elseif &ft == "cert"
