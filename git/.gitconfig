@@ -18,6 +18,10 @@
   prompt = false
 [difftool "icdiff"]
   cmd = icdiff --line-numbers $LOCAL $REMOTE
+[merge]
+  # Provide better context during a merge conflict
+  # https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging
+  conflictstyle = diff3
 [alias]
   stats   = shortlog -sn --all --no-merges
   recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
