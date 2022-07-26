@@ -8,7 +8,8 @@
 os_platform=$(uname -s)
 
 # Which elevation util
-elevate=$(command -v sudo || command -v doas)
+# export it since any function wont be able to evaluate it otherwise
+export ELEVATE=$(command -v sudo || command -v doas)
 
 #####
 #
@@ -61,7 +62,7 @@ user_confirm() {
 
 
 nukepart() {
-  user_confirm && ${elevate} dd if=/dev/urandom bs=1M count=2 of="$1"
+  user_confirm && ${ELEVATE} dd if=/dev/urandom bs=1M count=2 of="$1"
 }
 
 # Look at my default knobs
@@ -229,4 +230,4 @@ rcfiles=$(ls ${HOME}/.bashrc.d/* 2>/dev/null)
 for file in $rcfiles; do
     source $file
 done
-unset rcfiles os_platform elevate
+unset rcfiles os_platform
