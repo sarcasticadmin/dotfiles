@@ -18,6 +18,10 @@
   prompt = false
 [difftool "icdiff"]
   cmd = icdiff --line-numbers $LOCAL $REMOTE
+[merge]
+  # Provide better context during a merge conflict
+  # https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging
+  conflictstyle = diff3
 [alias]
   stats   = shortlog -sn --all --no-merges
   recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
@@ -42,7 +46,12 @@
   churn   = "!gc() { \
     echo \"scale=2; $(git log --shortstat | awk '/files changed/ {total+=$4; total+=$6} END {print total}') / $(cloc . --json --diff-timeout 20 --processes=$(nproc) | jq -r '.SUM.code')\" | bc ; \
     }; gc"
-  checkout-date = "!f() { git checkout -b rh/$(date +%s); }; f"
+  # Quickly create a branch thats unique. Add a suffix to make it standout if needed
+  # Date is prefixed for easy sorting with git branch
+  checkout-date = "!f() { \
+      bn=$(printf -- 'rh/%s%s' $(date +%s) $1); \
+      git checkout -b ${bn}; \
+    }; f"
   checkout-prev = "checkout @{-1}"
   fixup = "!f() { \
       BRANCH=${1:-'master'}; \
