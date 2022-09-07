@@ -37,7 +37,6 @@ font pango: $custom_font 13
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -82,35 +81,40 @@ bindsym $mod+o focus child
 
 # Workspace
 # Name the workspaces
-set $tag0 "0: main"
-set $tag1 "1: workspace"
-set $tag2 "2: www"
-set $tag3 "3: misc0"
-set $tag4 "4: misc1"
+set $ws0 "0: main"
+set $ws1 "1: workspace"
+set $ws2 "2: www"
+set $ws3 " 3 "
+set $ws4 " 4 "
+set $ws5 " 5 "
+set $ws6 " 6 "
+set $ws7 " 7 "
+set $ws8 " 8 "
+set $ws9 " 9 "
 
 # switch to workspace
-bindsym $mod+0 workspace $tag0
-bindsym $mod+1 workspace $tag1
-bindsym $mod+2 workspace $tag2
-bindsym $mod+3 workspace $tag3
-bindsym $mod+4 workspace $tag4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # move focused container to workspace
-bindsym $mod+Shift+0 move container to workspace $tag0
-bindsym $mod+Shift+1 move container to workspace $tag1
-bindsym $mod+Shift+2 move container to workspace $tag2
-bindsym $mod+Shift+3 move container to workspace $tag3
-bindsym $mod+Shift+4 move container to workspace $tag4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -160,8 +164,8 @@ bar {
     status_command i3status -c ~/.i3status.conf
 }
 
-exec --no-startup-id feh --bg-fill ~/.backgrounds/pluto_desktop.jpg
-exec --no-startup-id i3-msg 'workspace $tag1; exec urxvt -e tmux'
-exec --no-startup-id i3-msg 'workspace $tag2; exec firefox; workspace $tag1'
+#exec --no-startup-id feh --bg-fill ~/.backgrounds/pluto_desktop.jpg
+exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal -e tmux'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 
 bindsym Control+mod1+l exec sh ~/.i3/i3lock.sh
