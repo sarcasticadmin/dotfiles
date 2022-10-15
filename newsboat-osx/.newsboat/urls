@@ -5,8 +5,7 @@ https://news.ycombinator.com/rss tech "~Hacker News" "!hidden"
 http://lifehacker.com/rss tech "!Lifehacker"
 https://hackaday.com/blog/feed/ tech "~Hackaday" "!hidden"
 http://www.anandtech.com/rss/ tech "!Anandtech"
-http://feeds.arstechnica.com/arstechnica/index tech "!Ars Technica"
-http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear Politics" "!hidden"
+http://feeds.arstechnica.com/arstechnica/index tech "~Ars Technica" "!hidden"
 https://blog.shiftyjelly.com/feed/ tech apps podcast "!Podcasts"
 https://www.freebsd.org/news/rss.xml tech freebsd "!FreeBSD.org"
 https://blog.pfsense.org/?cat=57&feed=rss2 tech freebsd "!PFSense.org"
@@ -22,7 +21,7 @@ https://weekly.nixos.org/feeds/all.rss.xml tech unix reproducibility "!Nixos Wee
 http://dtrace.org/blogs/feed/ tech unix dtrace "!Dtrace"
 https://reproducible-builds.org/blog/index.rss tech unix reproducibility "~Reproducible Builds" "!hidden"
 https://lwn.net/headlines/rss tech unix "!lwn"
-https://github.blog/feed "~GitHub" "!hidden"
+https://github.blog/feed tech "~GitHub" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
@@ -39,6 +38,7 @@ https://www.webtoons.com/en/challenge/madebytio/rss?title_no=597759 comics "~Mad
 # News
 http://feeds.bbci.co.uk/news/world/rss.xml news "!BBC"
 https://rss.nytimes.com/services/xml/rss/nyt/World.xml news "!NYTimes"
+http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear Politics" "!hidden"
 
 # Status Pages
 https://status.aws.amazon.com/rss/all.rss status "~AWS Status" "!hidden"
@@ -48,9 +48,13 @@ https://www.githubstatus.com/history.rss status "~GitHub Status" "!hidden"
 https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss "~GitLab Status" "!hidden"
 https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
 
+# HAM
+http://qrznow.com/feed/ ham "~QRZ Now" "!hidden"
+https://www.reddit.com/r/amateurradio+hamfest+hamradio+hsmm_mesh+hamitforward+antennasporn/new/.rss?sort=new ham "~Reddit HAM" "!hidden"
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
 "query:FreeBSD News:tags # \"freebsd\""
 "query:Comics:tags # \"comics\""
 "query:World News:tags # \"news\""
 "query:Status:tags # \"status\""
+"query:HAM:tags # \"ham\""

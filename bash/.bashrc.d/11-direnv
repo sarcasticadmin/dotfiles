@@ -1,0 +1,7 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+
+# vagrant specifics
+if command -v direnv > /dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
