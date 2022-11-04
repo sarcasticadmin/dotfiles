@@ -5,7 +5,6 @@ set nocompatible
 call plug#begin()
 Plug 'vim-syntastic/syntastic', { 'commit': 'd31e270cc8affc6338a9ed44e2efcaec0ca4cd34' }
 Plug 'vim-autoformat/vim-autoformat', {'commit': 'd616fcf8a747f86bd3b26004b83ea5b7c7526df1' }
-Plug 'hashivim/vim-terraform', { 'commit': 'c8c9bbd70da65e2c0bcba2947c4061a7c3e24e69' }
 Plug 'fatih/vim-go', {'commit': 'f5d34f40d6757470f40600000c9c08de142d7ced' }
 Plug 'LnL7/vim-nix', {'commit': 'a3eed01f4de995a51dfdd06287e44fcb231f6adf' }
 call plug#end()
@@ -93,7 +92,7 @@ let g:autoformat_retab = 0
 let g:autoformat_verbosemode = 1
 
 " Toggle autofmt whitelist for fmt func
-let g:my_autofmt_whitelist = ['sh', 'python', 'nix']
+let g:my_autofmt_whitelist = ['sh', 'python', 'nix', 'terraform']
 
 " Pythonisms
 let g:formatters_python = ['autopep8']
@@ -101,10 +100,6 @@ let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
-
-" Terraform specific configs
-let g:terraform_fmt_on_save=1
-let g:terraform_align=1
 
 " goisms
 let g:go_disable_autoinstall = 1
