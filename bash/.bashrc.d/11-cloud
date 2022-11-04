@@ -22,6 +22,9 @@ aws-ec2-fp() {
 }
 
 if command -v aws > /dev/null 2>&1; then
+  # Disable the awscli pager outright
+  export AWS_PAGER=""
+
   # Generate a temporary set of AWS credentials
   # Useful when tool require AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
   # Make sure to export AWS_SESSION_TOKEN as well
