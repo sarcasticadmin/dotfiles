@@ -1,0 +1,8 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+# hub specifics
+if command -v gh > /dev/null 2>&1; then
+  alias gh-prs="gh pr list"
+  alias gh-review="gh pr list --search 'is:pr is:open user-review-requested:@me'"
+  alias gh-browser="gh repo view --web"
+fi
