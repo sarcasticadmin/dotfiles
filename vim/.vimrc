@@ -5,7 +5,6 @@ set nocompatible
 call plug#begin()
 Plug 'vim-syntastic/syntastic', { 'commit': 'd31e270cc8affc6338a9ed44e2efcaec0ca4cd34' }
 Plug 'vim-autoformat/vim-autoformat', {'commit': 'd616fcf8a747f86bd3b26004b83ea5b7c7526df1' }
-Plug 'fatih/vim-go', {'commit': 'f5d34f40d6757470f40600000c9c08de142d7ced' }
 call plug#end()
 
 " Never fold
@@ -100,20 +99,7 @@ let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
 
-" goisms
-let g:go_disable_autoinstall = 1
-let g:go_fmt_autosave=1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_fields=1
-let g:go_highlight_types=1
-let g:go_gopls_enabled = 0
-
-" go-vim ignore warnings for vim < 7.4.1689
-let g:go_version_warning = 0
+" goslide
 autocmd BufRead,BufNewFile *.slide set filetype=slide
 
 " Nix
