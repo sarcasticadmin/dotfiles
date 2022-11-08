@@ -6,7 +6,6 @@ call plug#begin()
 Plug 'vim-syntastic/syntastic', { 'commit': 'd31e270cc8affc6338a9ed44e2efcaec0ca4cd34' }
 Plug 'vim-autoformat/vim-autoformat', {'commit': 'd616fcf8a747f86bd3b26004b83ea5b7c7526df1' }
 Plug 'fatih/vim-go', {'commit': 'f5d34f40d6757470f40600000c9c08de142d7ced' }
-Plug 'LnL7/vim-nix', {'commit': 'a3eed01f4de995a51dfdd06287e44fcb231f6adf' }
 call plug#end()
 
 " Never fold
