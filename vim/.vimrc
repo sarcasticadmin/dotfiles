@@ -3,6 +3,8 @@ set nocompatible
 
 " Vim Plug
 call plug#begin()
+" Need to move to ALE since synatstic has been deprecated:
+" https://github.com/vim-syntastic/syntastic#deprecation
 Plug 'vim-syntastic/syntastic', { 'commit': 'd31e270cc8affc6338a9ed44e2efcaec0ca4cd34' }
 Plug 'vim-autoformat/vim-autoformat', {'commit': 'd616fcf8a747f86bd3b26004b83ea5b7c7526df1' }
 call plug#end()
@@ -90,7 +92,7 @@ let g:autoformat_retab = 0
 let g:autoformat_verbosemode = 1
 
 " Toggle autofmt whitelist for fmt func
-let g:my_autofmt_whitelist = ['sh', 'python', 'nix', 'terraform']
+let g:my_autofmt_whitelist = ['sh', 'python', 'nix', 'terraform', 'go']
 
 " Pythonisms
 let g:formatters_python = ['autopep8']
@@ -98,6 +100,11 @@ let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
+
+" go
+let g:formatters_go = ['robs_gofmt']
+let g:formatdef_robs_gofmt = "'gofmt'"
+autocmd BufRead,BufNewFile *.go set noet ts=4 sw=4
 
 " goslide
 autocmd BufRead,BufNewFile *.slide set filetype=slide
