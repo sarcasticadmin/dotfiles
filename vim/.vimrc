@@ -1,12 +1,11 @@
+" Check existing set values with set <val>?
 " Must have
 set nocompatible
 
 " Vim Plug
 call plug#begin()
-" Need to move to ALE since synatstic has been deprecated:
-" https://github.com/vim-syntastic/syntastic#deprecation
-Plug 'vim-syntastic/syntastic', { 'commit': 'd31e270cc8affc6338a9ed44e2efcaec0ca4cd34' }
-Plug 'vim-autoformat/vim-autoformat', {'commit': 'd616fcf8a747f86bd3b26004b83ea5b7c7526df1' }
+" One plugin encompassing linting and fmting
+Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
 call plug#end()
 
 " Never fold
@@ -84,26 +83,34 @@ autocmd FileType make setlocal noexpandtab
 " Enable spellcheck for commit messages
 autocmd FileType gitcommit setlocal spell
 
-" Autoformat plugin and whitelist
-" NOTE: this plugin requires python be built into vim: vim --version
-" https://github.com/vim-autoformat/vim-autoformat#requirement
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_verbosemode = 1
+" ALE preferences
+" Check any settings of an open file: ALEInfo
 
-" Toggle autofmt whitelist for fmt func
-let g:my_autofmt_whitelist = ['sh', 'python', 'nix', 'terraform', 'go']
+" Only run linters named in ale_linters settings
+" I dont want any random surprises
+let g:ale_linters_explicit = 1
+" Show available linters via :help ale-options
+let g:ale_linters = {
+\   'go': ['gofmt'],
+\   'nix': ['nixpkgs-fmt'],
+\   'python': ['black'],
+\   'rego': ['opafmt'],
+\   'sh': ['shellcheck'],
+\   'terraform': ['terraform'],
+\}
 
-" Pythonisms
-let g:formatters_python = ['autopep8']
-let g:formatdef_autopep8 = "'autopep8 - --max-line-length 120'"
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'go': ['gofmt'],
+\   'nix': ['nixpkgs-fmt'],
+\   'terraform': ['terraform'],
+\}
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
 
 " go
-let g:formatters_go = ['robs_gofmt']
-let g:formatdef_robs_gofmt = "'gofmt'"
 autocmd BufRead,BufNewFile *.go set noet ts=4 sw=4
 
 " goslide
@@ -111,12 +118,6 @@ autocmd BufRead,BufNewFile *.slide set filetype=slide
 
 " Nix
 autocmd BufRead,BufNewFile *.nix set filetype=nix
-" Identifier just needs to be uniq since itll shell out
-" based on the formatdef_*
-"
-" Cannot get hyphens in vars
-let g:formatters_nix = ['nixpkgs_fmt']
-let g:formatdef_nixpkgs_fmt = "'nixpkgs-fmt'"
 autocmd BufNewFile shell.nix 0r ~/.vim/templates/nix/shell.nix
 
 " Terraform
@@ -124,14 +125,7 @@ autocmd BufNewFile shell.nix 0r ~/.vim/templates/nix/shell.nix
 autocmd BufNewFile,BufRead *.tf* set syntax=tf
 
 " Yaml
-let g:syntastic_yaml_checkers = ['yamllint']
 autocmd BufNewFile *.yaml,*.yml 0r ~/.vim/templates/skeleton.yaml
-
-" Rego
-let g:formatdef_rego = '"opa fmt"'
-let g:formatters_rego = ['rego']
-" Default to always autofmt rego
-autocmd BufWritePre *.rego Autoformat
 
 " Fix Vim Colors for FreeBSD
 if &term =~ "xterm" || &term =~ "screen"
@@ -194,25 +188,19 @@ endfunction
 
 " fmt so I dont have to think about it
 function! <SID>fmt()
-  " TODO: see if we can move this into autofmt
+  " TODO: see if we can move this into ale fixer
   if &ft == "json"
     "python35+ doesnt sort keys alpha by default
     "https://hg.python.org/cpython/rev/58a871227e5b
     %!if [ $(command -v python3) ];then python3 -m json.tool;else python -m json.tool;fi
     echo "fmt json"
-  " Check to see if autofmt is already loaded
-  elseif exists("g:autofmt_loaded")
-    "only works since I dont have anything else manipulating BufWrite
-    autocmd! BufWrite *
+  " Check to see if global ale_fix var is already enabled
+  elseif get(g:, 'ale_fix_on_save') == 1
+    let g:ale_fix_on_save = 0
     echo "nofmt" &ft
-    unlet g:autofmt_loaded
-  " Only fmt on whitelisted languages that way I dont get any crazy surprises about formatting defaults on save
-  "
-  " Havent found a good way to detect calling Autoformat to be able to toggle it on and off. For now well let and unlet a
-  " var to be the toggle
-  elseif index(g:my_autofmt_whitelist, &ft) >= 0
-    let g:autofmt_loaded = 1
-    autocmd BufWrite * Autoformat
+  " Only fmt on save for whitelisted languages to avoid any crazy surprises
+  elseif has_key(g:ale_fixers, &ft) >= 0
+    let g:ale_fix_on_save = 1
     echo "fmt" &ft
   elseif &ft == "cert"
     "set textwidth=64
