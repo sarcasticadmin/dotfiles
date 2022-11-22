@@ -119,6 +119,10 @@ let g:formatters_nix = ['nixpkgs_fmt']
 let g:formatdef_nixpkgs_fmt = "'nixpkgs-fmt'"
 autocmd BufNewFile shell.nix 0r ~/.vim/templates/nix/shell.nix
 
+" Terraform
+" Make sure vim knows .tf* is correct syntax and not syntax=terraform
+autocmd BufNewFile,BufRead *.tf* set syntax=tf
+
 " Yaml
 let g:syntastic_yaml_checkers = ['yamllint']
 autocmd BufNewFile *.yaml,*.yml 0r ~/.vim/templates/skeleton.yaml
