@@ -51,7 +51,10 @@ https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
 # HAM
 http://qrznow.com/feed/ ham "~QRZ Now" "!hidden"
 http://www.arrl.org/news/rss ham "~ARRL" "!hidden"
+https://winlink.org/rss.xml ham winlink "~Winlink News" "!hidden"
+https://winlink.org/blog/feed ham winlink "~Winlink Sysops" "!hidden"
 https://www.reddit.com/r/amateurradio+hamfest+hamradio+hsmm_mesh+hamitforward+antennasporn/new/.rss?sort=new ham "~Reddit HAM" "!hidden"
+
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
 "query:FreeBSD News:tags # \"freebsd\""
