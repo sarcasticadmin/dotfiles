@@ -6,6 +6,7 @@ bin
 dircolors
 fonts
 gcloud
+gh
 git
 gnupg
 gnureadline
