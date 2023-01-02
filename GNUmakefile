@@ -7,7 +7,10 @@ include _include/*.mk
 $(HOME)/bin:
 	mkdir -p ${HOME}/bin
 
-stow: $(HOME)/bin
+$(HOME)/.config:
+	mkdir -p ${HOME}/.config
+
+stow: $(HOME)/bin $(HOME)/.config
 	$(foreach pkg, $(PKGS), $(STOW) -R $(pkg);)
 
 unstow:
