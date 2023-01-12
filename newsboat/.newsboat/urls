@@ -54,6 +54,8 @@ http://www.arrl.org/news/rss ham "~ARRL" "!hidden"
 https://winlink.org/rss.xml ham winlink "~Winlink News" "!hidden"
 https://winlink.org/blog/feed ham winlink "~Winlink Sysops" "!hidden"
 https://www.reddit.com/r/amateurradio+hamfest+hamradio+hsmm_mesh+hamitforward+antennasporn/new/.rss?sort=new ham "~Reddit HAM" "!hidden"
+https://groups.io/g/diy599/rss ham qrp "~DIY599" "!hidden"
+https://groups.io/g/APRS/rss ham aprs "~APRS" "!hidden"
 
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
