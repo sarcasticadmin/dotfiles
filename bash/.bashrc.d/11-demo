@@ -4,10 +4,12 @@
 demo(){
   PS1BAK="$PS1"
   PS1='$ '
+  clear
 }
 
 udemo(){
   test -z "$PS1BAK" && return
   PS1="$PS1BAK"
   unset PS1BAK
+  clear
 }
