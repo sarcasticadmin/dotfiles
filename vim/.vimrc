@@ -93,7 +93,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'go': ['gofmt'],
 \   'nix': ['nixpkgs-fmt'],
-\   'python': ['black'],
+\   'python': ['pylint'],
 \   'rego': ['opafmt'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform'],
@@ -103,9 +103,12 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'go': ['gofmt'],
+\   'python': ['black'],
 \   'nix': ['nixpkgs-fmt'],
 \   'terraform': ['terraform'],
 \}
+
+let g:ale_python_black_use_global = 1
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
