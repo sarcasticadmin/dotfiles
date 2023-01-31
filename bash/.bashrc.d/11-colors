@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+# vi:syntax=sh
 # get rid of colors from command line tools
 # Ref: https://unix.stackexchange.com/a/111936
-alias stripcolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
+alias nocolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
