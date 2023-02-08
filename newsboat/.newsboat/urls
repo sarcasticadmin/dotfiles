@@ -22,6 +22,8 @@ http://dtrace.org/blogs/feed/ tech unix dtrace "!Dtrace"
 https://reproducible-builds.org/blog/index.rss tech unix reproducibility "~Reproducible Builds" "!hidden"
 https://lwn.net/headlines/rss tech unix "!lwn"
 https://github.blog/feed tech "~GitHub" "!hidden"
+https://drewdevault.com/blog/index.xml tech "~Drew DeVault" "!hidden"
+https://oxide.computer/blog/feed tech hardware "~Oxide" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
