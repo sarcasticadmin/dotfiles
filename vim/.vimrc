@@ -86,6 +86,16 @@ autocmd FileType gitcommit setlocal spell
 " ALE preferences
 " Check any settings of an open file: ALEInfo
 
+" Disable ALE from running immediately after opening a file
+let g:ale_lint_on_enter = 0
+
+" Disable left hand gutter when errors are found
+let g:ale_set_signs = 0
+
+" Only lint when the file is saved
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
 " Only run linters named in ale_linters settings
 " I dont want any random surprises
 let g:ale_linters_explicit = 1
