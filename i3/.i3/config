@@ -71,7 +71,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # set orientation before split
-bindsym $mod+Shift+percent split h
+# | to set horizontal split (unable to use percent
+# since it conflicts with workspace 5)
+# " to set vertical split
+bindsym $mod+Shift+bar split h
 bindsym $mod+Shift+apostrophe split v
 
 ##### Having been much help
