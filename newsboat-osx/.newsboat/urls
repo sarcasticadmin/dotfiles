@@ -22,6 +22,8 @@ https://lwn.net/headlines/rss tech unix "!lwn"
 https://github.blog/feed tech "~GitHub" "!hidden"
 https://drewdevault.com/blog/index.xml tech "~Drew DeVault" "!hidden"
 https://oxide.computer/blog/feed tech hardware "~Oxide" "!hidden"
+https://krebsonsecurity.com/rss tech security "~Krebs" "!hidden"
+https://www.schneier.com/feed/atom tech security "~Schneier" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
