@@ -57,6 +57,7 @@
       BRANCH=${1:-'master'}; \
       git reset --soft ${BRANCH} && git commit; \
     }; f"
+  tagtype = "for-each-ref refs/tags"
 
 
 [filter "lfs"]
