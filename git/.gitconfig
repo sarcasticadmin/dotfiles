@@ -69,3 +69,7 @@
 [include]
   path = ~/.gitconfig.d/hub
   path = ~/.gitconfig.d/99-work
+
+[push]
+  # default --set-upstream branch to the same name as local branch
+  default = current
