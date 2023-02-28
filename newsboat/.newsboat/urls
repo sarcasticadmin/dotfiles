@@ -2,7 +2,6 @@
 https://lobste.rs/rss tech "!Lobsters"
 http://n-gate.com/hackernews/index.rss tech "!Webshit Weekly"
 https://news.ycombinator.com/rss tech "~Hacker News" "!hidden"
-http://lifehacker.com/rss tech "!Lifehacker"
 https://hackaday.com/blog/feed/ tech "~Hackaday" "!hidden"
 http://www.anandtech.com/rss/ tech "!Anandtech"
 http://feeds.arstechnica.com/arstechnica/index tech "~Ars Technica" "!hidden"
