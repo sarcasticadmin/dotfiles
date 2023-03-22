@@ -76,3 +76,7 @@
 [push]
   # default --set-upstream branch to the same name as local branch
   default = current
+
+[clone]
+  # "origin" is for forks which I do less often
+  defaultRemoteName = upstream
