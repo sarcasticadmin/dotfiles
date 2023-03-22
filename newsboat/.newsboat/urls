@@ -26,7 +26,6 @@ https://www.schneier.com/feed/atom tech security "~Schneier" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
-http://feed.dilbert.com/dilbert/daily_strip comics "~Dilbert" "!hidden"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
 https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
