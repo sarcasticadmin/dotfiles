@@ -59,6 +59,9 @@
     }; f"
   tagtype = "for-each-ref refs/tags"
 
+[lfs]
+  # Ignore excessive nagging: "Locking support detected on remote "origin". Consider enabling it with:"
+  locksverify = false
 
 [filter "lfs"]
   clean    = git-lfs clean -- %f
@@ -73,3 +76,7 @@
 [push]
   # default --set-upstream branch to the same name as local branch
   default = current
+
+[clone]
+  # "origin" is for forks which I do less often
+  defaultRemoteName = upstream
