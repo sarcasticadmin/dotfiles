@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Display Power Management Signaling (DPMS)
 # check the value of DPMS: xset q
 
 # Revert all temporary behavior after logging back in
