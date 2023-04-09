@@ -204,17 +204,19 @@ fi
 # Disable stopping flowcontrol
 stty -ixon
 
-# gpg-agent stuff
-if [ ${ENABLE_GPG:-1} -eq 0 ]; then
-  # Is daemon running?
-  if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
-    eval $(gpg-agent --daemon)
-  fi
-  # gpg pinentry
-  GPG_TTY=$(tty)
-  export GPG_TTY
+if command -v gpg-agent > /dev/null 2>&1; then
+  # gpg-agent stuff
+  if [ ${ENABLE_GPG:-1} -eq 0 ]; then
+    # Is daemon running?
+    if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
+      eval $(gpg-agent --daemon)
+    fi
+    # gpg pinentry
+    GPG_TTY=$(tty)
+    export GPG_TTY
 
-  ssh_agent_setup
+    ssh_agent_setup
+  fi
 fi
 
 # Start up usb auto mounting if present
