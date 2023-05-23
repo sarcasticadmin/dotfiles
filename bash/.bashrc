@@ -81,6 +81,15 @@ shopt -s cmdhist
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# tab completion prefences
+# only prepopulate prompt on subsequent tab
+bind "set menu-complete-display-prefix on"
+bind "set show-all-if-ambiguous on"
+# forward tab completion
+bind "TAB:menu-complete"
+# rev tab completion shift + tab
+bind '"\e[Z": menu-complete-backward'
+
 # Obviously
 export EDITOR=vim
 
