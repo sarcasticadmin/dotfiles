@@ -24,6 +24,8 @@ https://oxide.computer/blog/feed tech hardware "~Oxide" "!hidden"
 https://krebsonsecurity.com/rss tech security "~Krebs" "!hidden"
 https://www.schneier.com/feed/atom tech security "~Schneier" "!hidden"
 https://stacker.news/rss tech crypto "~Stacker News" "!hidden"
+https://shape-of-code.com/feed/ tech research commentary "~Shape of Code" "!hidden"
+https://neverworkintheory.org/atom.xml tech research commentary "~Never Work in Theory" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
