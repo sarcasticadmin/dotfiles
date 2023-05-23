@@ -1,4 +1,4 @@
-# URLs
+# Tech
 https://lobste.rs/rss tech "!Lobsters"
 http://n-gate.com/hackernews/index.rss tech "!Webshit Weekly"
 https://news.ycombinator.com/rss tech "~Hacker News" "!hidden"
@@ -23,6 +23,7 @@ https://drewdevault.com/blog/index.xml tech "~Drew DeVault" "!hidden"
 https://oxide.computer/blog/feed tech hardware "~Oxide" "!hidden"
 https://krebsonsecurity.com/rss tech security "~Krebs" "!hidden"
 https://www.schneier.com/feed/atom tech security "~Schneier" "!hidden"
+https://stacker.news/rss tech crypto "~Stacker News" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
