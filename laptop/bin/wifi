@@ -9,7 +9,7 @@ Simple tool for interacting with wpa_cli for wifi
 OPTIONS:
   -h      Show this message
 
-ARGS:
+SUBCOMMANDS:
   add     Add a new wifi via SSID and passphrase
   disable Disable network thats exists in wpa_supplicant.config
   enable  Enable network thats exists in wpa_supplicant.config
@@ -24,6 +24,10 @@ EXAMPLES:
   Add open wifi SSID to wpa_supplicant.conf:
 
       $(basename $0) add openwifissid
+
+  Get status for specific interface:
+
+      $(basename $0) status -i wlan0
 
 EOF
 }
@@ -43,42 +47,57 @@ do
 done
 shift $((OPTIND -1))
 
-if [ -z $1 ] || [ $1 == "status" ];then
-  wpa_cli status
-elif [ $1 == "list" ];then
-  wpa_cli list_networks
-elif [ $1 == "scan" ];then
-  wpa_cli scan
-  sleep 1
-  wpa_cli scan_results
-elif [ $1 == "enable" ];then
-  wpa_cli enable_network $2
-elif [ $1 == "disable" ];then
-  wpa_cli disable_network $2
-elif [ $1 == "add" ]; then
-  NETWORK_ID=$(wpa_cli add_network | awk -F' ' 'NR == 2 {print $NF}')
-  SSID="$2"
-  PSK="$3"
-  if [ -z $PSK ];then
-    wpa_cli << EOF
+case $1 in
+    "status")
+      shift
+      wpa_cli "$@" status
+      ;;
+    "list")
+      shift
+      wpa_cli "$@" list_networks
+      ;;
+    "scan")
+      shift
+      wpa_cli "$@" scan
+      sleep 1
+      wpa_cli "$@" scan_results
+      ;;
+    "enable")
+      SSID="$2"
+      shift 2
+      wpa_cli "$@" enable_network "$SSID"
+      ;;
+    "disable")
+      SSID="$2"
+      shift 2
+      wpa_cli "$@" disable_network "$SSID"
+      ;;
+    "add")
+      SSID="$2"
+      PSK="$3"
+      shift 3
+      NETWORK_ID=$(wpa_cli "$@" add_network | awk -F' ' 'NR == 2 {print $NF}')
+      if [ -z $PSK ];then
+        wpa_cli "$@" << EOF
 set_network $NETWORK_ID ssid "$SSID"
 set_network $NETWORK_ID key_mgmt NONE
 save_config
 EOF
-  else
-    # TODO Make this nicer
-    if [ $PSK == "-p" ];then
-      read -p "Enter in pass: " PSK
-    fi
-    wpa_cli << EOF
+      else
+        # TODO Make this nicer
+        if [ $PSK == "-p" ];then
+          read -p "Enter in pass: " PSK
+        fi
+        wpa_cli "$@" << EOF
 set_network $NETWORK_ID ssid "$SSID"
 set_network $NETWORK_ID psk "$PSK"
 save_config
 EOF
-  fi
-  echo "Successfully added $NETWORK_ID"
-else
-  usage
-  exit 1
-fi
+      fi
+      echo "Successfully added $NETWORK_ID"
+      ;;
+    "*")
+      usage
+      exit 1
+  esac
 exit 0
