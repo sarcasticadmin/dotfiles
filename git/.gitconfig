@@ -59,7 +59,7 @@
       git reset --soft ${BRANCH} && git commit; \
     }; f"
   tagtype = "for-each-ref refs/tags"
-
+  semver = "!f() { git tag | sort -V;}; f"
 [lfs]
   # Ignore excessive nagging: "Locking support detected on remote "origin". Consider enabling it with:"
   locksverify = false
