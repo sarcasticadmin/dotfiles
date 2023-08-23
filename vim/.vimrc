@@ -99,11 +99,12 @@ let g:ale_lint_on_insert_leave = 0
 " Only run linters named in ale_linters settings
 " I dont want any random surprises
 let g:ale_linters_explicit = 1
-" Show available linters via :help ale-options
+" Show available linters and filetype via :ALEInfo
+" Other options via :help ale-options
 let g:ale_linters = {
 \   'go': ['gofmt'],
 \   'nix': ['nixpkgs-fmt'],
-\   'python': ['pylint'],
+\   'python': ['flake8'],
 \   'rego': ['opafmt'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform'],
@@ -117,8 +118,6 @@ let g:ale_fixers = {
 \   'nix': ['nixpkgs-fmt'],
 \   'terraform': ['terraform'],
 \}
-
-let g:ale_python_black_use_global = 1
 
 " Rubyisms
 autocmd BufNewFile Gemfile 0r ~/.vim/templates/ruby/Gemfile
