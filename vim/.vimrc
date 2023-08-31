@@ -149,6 +149,17 @@ if &term =~ "xterm" || &term =~ "screen"
     let &t_Sf=nr2char(27).'[3%dm'
     let &t_Sb=nr2char(27).'[4%dm'
   endif
+
+  " Issue when connecting from a windows box -> openSSH -> remote vim
+  " visual selection was selecting one additional character to the right
+  " This seems to have been caused by windows trying to force the cursor
+  " https://github.com/microsoft/terminal/issues/9530
+  " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes#For_VTE_compatible_terminals_(urxvt,_st,_xterm,_gnome-terminal_3.x,_Konsole_KDE5_and_others),_wsltty_and_Windows_Terminal
+  "
+  " This should be compat with urxvt, xterm, and windows terminal
+  let &t_SI = "\<Esc>[2 q" "SI = INSERT mode, 2 -> solid block
+  let &t_SR = "\<Esc>[2 q" "SR = REPLACE mode, 2 -> solid block
+  let &t_EI = "\<Esc>[2 q" "EI = NORMAL mode (ELSE), 2 -> solid block
 endif
 
 
