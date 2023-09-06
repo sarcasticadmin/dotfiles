@@ -112,11 +112,14 @@ HISTTIMEFORMAT='%F %T '
 # less-isms
 
 # Global less options
+#
 # Be mindful not to put "+Gg" here since less can't know its percent
 # into the file it is until it knows how long the file is and this is
 # problematic in pipes
 # https://stackoverflow.com/questions/1049350/how-to-make-less-indicate-location-in-percentage
-export LESS="-isM"
+#
+# Q to explicitly silence pager bell
+export LESS="-isMQ"
 
 # For set preference for things using PAGER env var
 # Plus pass through ANSI escape sequences to render color
