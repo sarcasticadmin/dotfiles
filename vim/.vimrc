@@ -8,6 +8,10 @@ call plug#begin()
 Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
 call plug#end()
 
+" ruler(line numbers) in lower right
+set rulerformat=%-14.(%l,%c%V%)\ %P
+set ruler
+
 " Never fold
 set nofoldenable
 
