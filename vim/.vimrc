@@ -60,6 +60,12 @@ set directory=~/.vim/.tmp//,/tmp//
 set undodir=~/.vim/.tmp//,/tmp//
 set nobackup
 
+" reopening a file at last position
+if has("autocmd")
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 " Custom dictionary
 set spellfile=~/.vim/spell/tech.utf-8.add
 
