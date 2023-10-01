@@ -14,6 +14,10 @@
 [diff]
   tool = icdiff
   renameLimit = 9999
+[rebase]
+  # Allow for marking commit fixups prior to rebase during
+  # git commit --fixup
+  autoSquash = true
 [difftool]
   prompt = false
 [difftool "icdiff"]
