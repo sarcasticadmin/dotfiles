@@ -26,6 +26,7 @@ https://www.schneier.com/feed/atom tech security "~Schneier" "!hidden"
 https://stacker.news/rss tech crypto "~Stacker News" "!hidden"
 https://shape-of-code.com/feed/ tech research commentary "~Shape of Code" "!hidden"
 https://neverworkintheory.org/atom.xml tech research commentary "~Never Work in Theory" "!hidden"
+https://sfconservancy.org/feeds/blog/ tech "~Software Freedom Conservancy" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
@@ -53,14 +54,14 @@ https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss "~GitLab Status" "!
 https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
 
 # HAM
-http://qrznow.com/feed/ ham "~QRZ Now" "!hidden"
-http://www.arrl.org/news/rss ham "~ARRL" "!hidden"
+https://www.arrl.org/news/rss ham "~ARRL" "!hidden"
 https://winlink.org/rss.xml ham winlink "~Winlink News" "!hidden"
 https://winlink.org/blog/feed ham winlink "~Winlink Sysops" "!hidden"
 https://www.reddit.com/r/amateurradio+hamfest+hamradio+hsmm_mesh+hamitforward+antennasporn/new/.rss?sort=new ham "~Reddit HAM" "!hidden"
 https://groups.io/g/diy599/rss ham qrp "~DIY599" "!hidden"
 https://groups.io/g/APRS/rss ham aprs "~APRS" "!hidden"
-https://www.kb6nu.com/feed/ ham individual "~Dan KB6NU" "!hideen"
+https://www.kb6nu.com/feed/ ham individual "~Dan KB6NU" "!hidden"
+https://daily.hamweekly.com/atom.xml ham news "~HAM Radio Daily" "!hidden"
 
 # Query Aggregators
 "query:Tech News:tags # \"tech\""
