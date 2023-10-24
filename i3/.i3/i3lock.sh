@@ -18,7 +18,8 @@ revert() {
 trap revert HUP INT TERM EXIT
 
 # Screenshot then fast blur the current screen
-scrot - | convert - -scale 10% -blur 0x2.5 -resize 1000% /tmp/i3lock.png
+# -z to silence scrot #sanity
+scrot -z - | convert - -scale 10% -blur 0x2.5 -resize 1000% /tmp/i3lock.png
 # Temporary set vals for DPMS while locked (in seconds)
 # standby | suspend | off
 # off must be equal to or greater than standby and suspend
