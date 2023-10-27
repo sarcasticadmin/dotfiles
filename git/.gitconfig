@@ -57,7 +57,6 @@
       bn=$(printf -- 'rh/%s%s' $(date +%s) $1); \
       git checkout -b ${bn}; \
     }; f"
-  checkout-prev = "checkout @{-1}"
   fixup = "!f() { \
       BRANCH=${1:-'master'}; \
       git reset --soft ${BRANCH} && git commit; \
