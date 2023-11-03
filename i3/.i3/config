@@ -170,7 +170,7 @@ bar {
 }
 
 #exec --no-startup-id feh --bg-fill ~/.backgrounds/pluto_desktop.jpg
-exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal -e tmux'
+exec --no-startup-id i3-msg 'workspace $ws1; exec 'alacritty | i3-sensible-terminal' -e tmux'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 
 bindsym Control+mod1+l exec sh ~/.i3/i3lock.sh
