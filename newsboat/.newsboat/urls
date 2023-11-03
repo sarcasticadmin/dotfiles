@@ -50,7 +50,7 @@ https://status.aws.amazon.com/rss/all.rss status "~AWS Status" "!hidden"
 https://azurestatuscdn.azureedge.net/en-us/status/feed/ status "~Azure Status" "!hidden"
 https://status.cloud.google.com/en/feed.atom status "~GCP Status" "!hidden"
 https://www.githubstatus.com/history.rss status "~GitHub Status" "!hidden"
-https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss "~GitLab Status" "!hidden"
+https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss status "~GitLab Status" "!hidden"
 https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
 
 # HAM
