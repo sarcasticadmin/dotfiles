@@ -128,7 +128,7 @@ export PAGER="less +Gg -R"
 
 # Leave manpage place on screen after exit and set preference to read entire
 # file and start back at the beginning to get percentage info
-export MANPAGER="/usr/bin/env less -X +Gg"
+export MANPAGER="less -X +Gg"
 
 # Color for manpages
 export LESS_TERMCAP_mb=$'\e[1;31m'           # begin bold
