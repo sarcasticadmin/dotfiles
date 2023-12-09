@@ -46,9 +46,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -nb black -sb tomato -l 10 -fn "$custom_font"'
 
 # screenshots hotkey
+# scrot -z to silence the bell for sanity
 # Ensure scrot leverages specific select and line modes to remove line/block artifacts while highlighting
 # ref: https://github.com/resurrecting-open-source-projects/scrot/issues/36#issuecomment-751409737
-bindsym --release $mod+z exec scrot --select --line mode=edge -s 'ss-%Y%m%d%s.png' -e 'mv $f ~/Desktop/'
+bindsym --release $mod+z exec scrot -z --select --line mode=edge -s 'ss-%Y%m%d%s.png' -e 'mv $f ~/Desktop/'
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
