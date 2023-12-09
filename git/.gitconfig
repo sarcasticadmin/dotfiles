@@ -18,6 +18,8 @@
   # Allow for marking commit fixups prior to rebase during
   # git commit --fixup
   autoSquash = true
+[rerere]
+  #enabled = true
 [difftool]
   prompt = false
 [difftool "icdiff"]
