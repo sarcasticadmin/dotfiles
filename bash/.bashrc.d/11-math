@@ -15,6 +15,10 @@ epoch(){
   date +%s
 }
 
+epoch2h(){
+  date -d "@$1"
+}
+
 # Pass in how many days from today youd like to calculate
 weekdays(){
   burn=${1}
