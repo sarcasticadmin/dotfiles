@@ -166,8 +166,8 @@ bar {
     # i3bar position
     position top
     mode dock
-    # Using custom i3status.conf
-    status_command i3status -c ~/.i3status.conf
+    # dont specify -c for i3status.conf assume default lookup order
+    status_command i3status
 }
 
 #exec --no-startup-id feh --bg-fill ~/.backgrounds/pluto_desktop.jpg
