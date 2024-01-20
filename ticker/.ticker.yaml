@@ -1,0 +1,40 @@
+---
+show-summary: true
+show-tags: true
+show-fundamentals: true
+show-separator: true
+show-holdings: true
+sort: user
+interval: 5
+currency: USD
+currency-summary-only: false
+groups:
+  - name: crypto
+    watchlist:
+      - BTC-USD
+      - ADA-USD
+      - ETH-USD
+      - ETC-USD
+      - DOGE-USD
+      - IBIT # Blackrock Bitcoin ETF
+  - name: indexs
+    watchlist:
+      - ^GSPC # S&P500
+      - VFIAX # Vanguard S&P 500 Index
+      - VBTLX # Vanguard Total Bond Market Index
+      - SWPPX # Schwab S&P 500 Index
+      - SWAGX # Schwab U.S. Aggregate Bond Index
+      - VNQ # Vanguard Real Estate ETF
+  - name: metals
+    watchlist:
+      - JJC # Copper EFT
+      - GC=F # Gold
+      - SI=F # Silver
+  - name: currency
+    watchlist:
+      - GBPUSD=X
+      - EURUSD=X
+      - CNHUSD=X
+      - RUBUSD=X
+      - MXNUSD=X
+      - BRLUSD=X
