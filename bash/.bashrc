@@ -161,7 +161,10 @@ fi
 # Make 'w' column for user longer
 export PROCPS_USERLEN=24
 
-# set PATH so it includes user's private bin if it exists
+# set PATH so it includes: user's private bin if it exists
+#
+# manpath will also leverage PATH for its own search path
+# check with "manpath -d"
 if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
 fi

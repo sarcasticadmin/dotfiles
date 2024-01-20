@@ -18,6 +18,7 @@ pyenv
 rbenv
 ruby
 terraform
+ticker
 tmux
 vim
 weechat
