@@ -60,8 +60,9 @@ set directory=~/.vim/.tmp//,/tmp//
 set undodir=~/.vim/.tmp//,/tmp//
 set nobackup
 
-" reopening a file at last position
-if has("autocmd")
+" reopening a file at last position unless its an filetype for git
+" gitcommit and gitrebase are separate fts
+if has("autocmd") && &ft !~ "^git*"
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
