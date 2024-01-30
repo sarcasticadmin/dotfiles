@@ -22,8 +22,8 @@ tmux new-session -d -n news -s main
 tmux send-keys -t 0 'newsboat' 'Enter'
 
 # Window 1
-tmux new-window -n per
-tmux send-keys -t 0 "cd $HOME" 'Enter'
+tmux new-window -n stocks
+tmux send-keys -t 0 "if command -v ticker > /dev/null 3>&1; then ticker; else cd $HOME; fi" 'Enter'
 
 # Window 2
 tmux new-window -n per2
