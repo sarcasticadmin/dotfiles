@@ -23,6 +23,9 @@
 [branch]
   # sort by most recently used branches instead of alphabetical
   sort = -committerdate
+[tag]
+  # sort by most recently created tags
+  sort = -taggerdate
 [rerere]
   #enabled = true
 [difftool]
