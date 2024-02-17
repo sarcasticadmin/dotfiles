@@ -26,6 +26,9 @@
 [tag]
   # sort by most recently created tags
   sort = -taggerdate
+[commit]
+  # include commit diff while writing commit messages
+  verbose = true
 [rerere]
   #enabled = true
 [difftool]
