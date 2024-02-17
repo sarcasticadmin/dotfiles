@@ -30,7 +30,10 @@
   # include commit diff while writing commit messages
   verbose = true
 [rerere]
-  #enabled = true
+  # reuse recovered resolution
+  # remembers how you resolved merge conflicts during a git rebase
+  # and automatically resolves conflicts when possible
+  enabled = true
 [difftool]
   prompt = false
 [difftool "icdiff"]
