@@ -68,6 +68,7 @@ https://groups.io/g/diy599/rss ham qrp "~DIY599" "!hidden"
 https://groups.io/g/APRS/rss ham aprs "~APRS" "!hidden"
 https://www.kb6nu.com/feed/ ham individual "~Dan KB6NU" "!hidden"
 https://daily.hamweekly.com/atom.xml ham "~HAM Radio Daily" "!hidden"
+https://www.arnewsline.org/?format=rss ham "~AR Newsline" "!hidden"
 
 # Query Aggregators
 # https://newsboat.org/releases/2.10.2/docs/newsboat.html#available-comparison-operators
