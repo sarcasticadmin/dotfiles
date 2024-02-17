@@ -12,6 +12,8 @@
 [stash]
   showPatch = true
 [diff]
+  # diff better when reordering code
+  algorithm = histogram
   tool = icdiff
   renameLimit = 9999
 [rebase]
