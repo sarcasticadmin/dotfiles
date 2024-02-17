@@ -20,6 +20,9 @@
   # Allow for marking commit fixups prior to rebase during
   # git commit --fixup
   autoSquash = true
+[branch]
+  # sort by most recently used branches instead of alphabetical
+  sort = -committerdate
 [rerere]
   #enabled = true
 [difftool]
