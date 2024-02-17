@@ -12,14 +12,28 @@
 [stash]
   showPatch = true
 [diff]
+  # diff better when reordering code
+  algorithm = histogram
   tool = icdiff
   renameLimit = 9999
 [rebase]
   # Allow for marking commit fixups prior to rebase during
   # git commit --fixup
   autoSquash = true
+[branch]
+  # sort by most recently used branches instead of alphabetical
+  sort = -committerdate
+[tag]
+  # sort by most recently created tags
+  sort = -taggerdate
+[commit]
+  # include commit diff while writing commit messages
+  verbose = true
 [rerere]
-  #enabled = true
+  # reuse recovered resolution
+  # remembers how you resolved merge conflicts during a git rebase
+  # and automatically resolves conflicts when possible
+  enabled = true
 [difftool]
   prompt = false
 [difftool "icdiff"]
