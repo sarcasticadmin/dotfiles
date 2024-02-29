@@ -44,6 +44,8 @@
   # example usage: https://github.blog/2022-01-24-highlights-from-git-2-35/
   conflictStyle = zdiff3
 [alias]
+  # Allow for copy/paste diffs without prefixes
+  pat     = "!f() { git diff --no-prefix $@ ;}; f"
   stats   = shortlog -sn --all --no-merges
   recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
