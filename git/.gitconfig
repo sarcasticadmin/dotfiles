@@ -4,6 +4,7 @@
 [core]
   editor = vim
   pager  = less -R
+  excludesfile = ~/.gitignore
 [advice]
   # ignore horrible advice when push fails
   pushNonFastForward = false
