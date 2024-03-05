@@ -7,5 +7,9 @@ if [ "${os_platform}" == "Darwin"  ];then
   # Disable saving sessions in OSX
   touch "$HOME/.bash_sessions_disable"
 
+  # ignore bash deprecation warning
+  # ref: https://support.apple.com/kb/HT208050
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+
   alias flush-dnscache="sudo killall -HUP mDNSResponder"
 fi

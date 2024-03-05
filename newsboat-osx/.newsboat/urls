@@ -29,6 +29,7 @@ https://neverworkintheory.org/atom.xml tech research commentary "~Never Work in 
 https://sfconservancy.org/feeds/blog/ tech "~Software Freedom Conservancy" "!hidden"
 https://pagedout.institute/rss.xml tech magazine "~Paged Out" "!hidden"
 https://www.bleepingcomputer.com/feed/ tech "~Bleeping Comp" "!hidden"
+https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!hidden"
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
