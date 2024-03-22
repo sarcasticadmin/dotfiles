@@ -46,6 +46,7 @@ https://patchfriday.com/rss.xml comics "!PatchFriday"
 https://thejenkinscomic.wordpress.com/feed/ comics "!The Jenkins"
 https://www.webtoons.com/en/challenge/madebytio/rss?title_no=597759 comics "~MadeByTio" "!hidden"
 https://workchronicles.com/feed comics "~Work Chronicles" "!hidden"
+https://analognowhere.com/feed/rss.xml comics "~Analog Nowhere" "!hidden"
 
 # News
 http://feeds.bbci.co.uk/news/world/rss.xml news "!BBC"
