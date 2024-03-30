@@ -1,2 +1,5 @@
 # Sanity
 set bell-style none
+
+# stop bash editing the history when reusing and/or modifying an entry
+set revert-all-at-newline on
