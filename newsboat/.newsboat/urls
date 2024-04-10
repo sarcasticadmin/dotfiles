@@ -62,7 +62,13 @@ https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss status "~GitLab Sta
 https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
 
 # HAM
+https://www.zeroretries.org/feed ham "~Zero Retries" "!hidden"
+https://www.randomwire.us/feed ham "~Randomwire" "!hidden"
+https://preppercomm.substack.com/feed ham "~Prepper Comm" "!hidden"
+https://g5doc.substack.com/feed ham "~73" "!hidden"
+https://nt7s.substack.com/feed ham "~Applied Etherics" "!hidden"
 https://www.arrl.org/news/rss ham "~ARRL" "!hidden"
+https://qrper.com/feed ham "~QRPer" "!hidden"
 https://winlink.org/rss.xml ham winlink "~Winlink News" "!hidden"
 https://winlink.org/blog/feed ham winlink "~Winlink Sysops" "!hidden"
 https://www.reddit.com/r/amateurradio+hamfest+hamradio+hsmm_mesh+hamitforward+antennasporn/new/.rss?sort=new ham "~Reddit HAM" "!hidden"
