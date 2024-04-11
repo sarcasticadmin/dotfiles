@@ -1,3 +1,5 @@
+# check to make sure the feed is valid rss using feed validation service
+# by w3: https://validator.w3.org/feed/check.cgi
 # Tech
 https://lobste.rs/rss tech "!Lobsters"
 http://n-gate.com/hackernews/index.rss tech "!Webshit Weekly"
@@ -5,17 +7,17 @@ https://news.ycombinator.com/rss tech "~Hacker News" "!hidden"
 https://hackaday.com/blog/feed/ tech "~Hackaday" "!hidden"
 http://www.anandtech.com/rss/ tech "!Anandtech"
 http://feeds.arstechnica.com/arstechnica/index tech "~Ars Technica" "!hidden"
-https://blog.shiftyjelly.com/feed/ tech apps podcast "!Podcasts"
+https://blog.pocketcasts.com/rss/ tech apps podcast "!Podcasts"
 https://www.freebsd.org/news/rss.xml tech freebsd "~FreeBSD.org" "!hidden"
 http://feeds.feedburner.com/FreebsdFoundation tech freebsd "~FreeBSD Foundation" "!hidden"
 https://discoverbsd.com/feeds/posts/default tech freebsd "~DiscoverBSD" "!hidden"
 https://bsdsec.net/articles.atom tech freebsd security "!BSDSec"
 https://aws.amazon.com/new/feed/ tech aws vendor "~AWS" "!AWS"
 https://cloudblog.withgoogle.com/rss/ tech gcp vendor "!GCP"
-https://www.hashicorp.com/feed.xml tech hashicorp vendor "!Hashicorp"
+https://www.hashicorp.com/blog/feed.xml tech hashicorp vendor "!Hashicorp"
 https://www.openssl.org/blog/atom.xml tech security "!openSSL"
 https://weekly.nixos.org/feeds/all.rss.xml tech unix reproducibility "!Nixos Weekly"
-http://dtrace.org/blogs/feed/ tech unix dtrace "!Dtrace"
+https://dtrace.org/feed tech unix dtrace "!Dtrace"
 https://reproducible-builds.org/blog/index.rss tech unix reproducibility "~Reproducible Builds" "!hidden"
 https://lwn.net/headlines/rss tech unix "!lwn"
 https://github.blog/feed tech vendor "~GitHub" "!hidden"
@@ -33,14 +35,14 @@ https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
-https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Annouce" "!hidden"
+https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Announce" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
 https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
-https://www.monkeyuser.com/feed.xml comics "!MonkeyUser"
+https://www.monkeyuser.com/index.xml comics "!MonkeyUser"
 https://turnoff.us/feed.xml comics "!Turnoff"
 https://patchfriday.com/rss.xml comics "!PatchFriday"
 https://thejenkinscomic.wordpress.com/feed/ comics "!The Jenkins"
