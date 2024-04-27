@@ -36,6 +36,7 @@ https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
 https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Announce" "!hidden"
+https://nixpkgs.news/rss.xml tech nix "~Nixpkgs News" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
