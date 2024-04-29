@@ -171,6 +171,9 @@ bar {
 }
 
 #exec --no-startup-id feh --bg-fill ~/.backgrounds/pluto_desktop.jpg
+# print the current keymap table: xmodmap -pke
+# load changes adhoc:  xmodmap ~/.Xmodmap
+exec --no-startup-id '[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap'
 exec --no-startup-id i3-msg 'workspace $ws1; exec 'alacritty | i3-sensible-terminal' -e tmux'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws1'
 

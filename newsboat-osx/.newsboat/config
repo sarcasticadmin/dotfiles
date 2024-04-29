@@ -35,6 +35,10 @@ suppress-first-reload yes
 auto-reload yes
 reload-time 30
 reload-threads 4
+# The most import setting of them all since I use query feeds exclusively makes sure to use the prepopulate cached feeds
+# on startup
+# ref: https://github.com/newsboat/newsboat/issues/1408
+prepopulate-query-feeds yes
 
 # Clean up
 keep-articles-days 14
