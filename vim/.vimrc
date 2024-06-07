@@ -6,6 +6,12 @@ set nocompatible
 call plug#begin()
 " One plugin encompassing linting and fmting
 Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
+
+if has('nvim')
+  Plug 'nvim-lua/plenary.nvim', {'tag': 'v0.1.4' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
+endif
+
 call plug#end()
 
 " ruler(line numbers) in lower right
