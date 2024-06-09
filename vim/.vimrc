@@ -12,6 +12,9 @@ call plug#end()
 set rulerformat=%-14.(%l,%c%V%)\ %P
 set ruler
 
+" set line numbers to the left
+set number
+
 " Never fold
 set nofoldenable
 

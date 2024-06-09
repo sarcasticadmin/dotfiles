@@ -1,0 +1,51 @@
+# Starting in alacritty v0.13.0 .toml is for config files
+# Live config reload (changes require restart)
+live_config_reload = false
+
+[colors]
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x808080"
+blue = "0x0066ff"
+cyan = "0x00ffff"
+green = "0x33ff00"
+magenta = "0xcc00ff"
+red = "0xfe0100"
+white = "0xFFFFFF"
+yellow = "0xfeff00"
+
+[colors.cursor]
+cursor = "0xffffff"
+text = "0xF81CE5"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x0066ff"
+cyan = "0x00ffff"
+green = "0x33ff00"
+magenta = "0xcc00ff"
+red = "0xfe0100"
+white = "0xd0d0d0"
+yellow = "0xfeff00"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[cursor.style]
+# Cursor blinking state
+#
+# Values for `blinking`:
+#   - Never: Prevent the cursor from ever blinking
+#   - Off: Disable blinking by default
+#   - On: Enable blinking by default
+#   - Always: Force the cursor to always blink
+blinking = "Off"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
