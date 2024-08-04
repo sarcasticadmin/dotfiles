@@ -53,9 +53,10 @@ https://workchronicles.com/feed comics "~Work Chronicles" "!hidden"
 https://analognowhere.com/feed/rss.xml comics "~Analog Nowhere" "!hidden"
 
 # News
-http://feeds.bbci.co.uk/news/world/rss.xml news "!BBC"
-https://rss.nytimes.com/services/xml/rss/nyt/World.xml news "!NYTimes"
-http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear Politics" "!hidden"
+http://feeds.bbci.co.uk/news/world/rss.xml news "~BBC" "!hidden"
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml news "~NYTimes" "!hidden"
+http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear" "!hidden"
+https://www.therage.co/rss/ news finance "~The Rage" "!hidden" # lolas news
 
 # Status Pages
 https://status.aws.amazon.com/rss/all.rss status "~AWS Status" "!hidden"
