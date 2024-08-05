@@ -2,10 +2,22 @@
 " Must have
 set nocompatible
 
-" Vim Plug
-call plug#begin()
-" One plugin encompassing linting and fmting
-Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
+if has('nvim')
+
+  call plug#begin()
+  Plug 'nvim-lua/plenary.nvim', {'tag': 'v0.1.4' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
+  Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
+else
+  " Vim Plug should only load plugins from $HOME/.vim/
+  " without defining this explcitly it will search undesirable paths like:
+  " XDG_DATA_DIRS=/run/current-system/sw/share
+  " This then can cause vim plug to fail to load plugins
+  call plug#begin($HOME.'/.vim')
+  " One plugin encompassing linting and fmting
+  Plug 'dense-analysis/ale', { 'commit': '0b25d712b7978c3b6a3bd968645183377d9f1761' }
+endif
+
 call plug#end()
 
 " ruler(line numbers) in lower right

@@ -45,10 +45,12 @@
   # example usage: https://github.blog/2022-01-24-highlights-from-git-2-35/
   conflictStyle = zdiff3
 [alias]
+  # commit and fixup
+  can     = commit --amend --no-edit
   # Allow for copy/paste diffs without prefixes
   pat     = "!f() { git diff --no-prefix $@ ;}; f"
   stats   = shortlog -sn --all --no-merges
-  recap   = log --all --oneline --no-merges --author=rob@sarcasticadmin.com
+  recap   = log master --oneline --no-merges --author=rob@sarcasticadmin.com
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   today   = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
   graph   = log --graph --all --decorate --stat --date=iso

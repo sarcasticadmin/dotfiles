@@ -32,6 +32,7 @@ https://sfconservancy.org/feeds/blog/ tech "~Software Freedom Conservancy" "!hid
 https://pagedout.institute/rss.xml tech magazine "~Paged Out" "!hidden"
 https://www.bleepingcomputer.com/feed/ tech "~Bleeping Comp" "!hidden"
 https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!hidden"
+https://www.eff.org/rss/updates.xml tech security "~EFF" "!hidden"
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
@@ -52,9 +53,10 @@ https://workchronicles.com/feed comics "~Work Chronicles" "!hidden"
 https://analognowhere.com/feed/rss.xml comics "~Analog Nowhere" "!hidden"
 
 # News
-http://feeds.bbci.co.uk/news/world/rss.xml news "!BBC"
-https://rss.nytimes.com/services/xml/rss/nyt/World.xml news "!NYTimes"
-http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear Politics" "!hidden"
+http://feeds.bbci.co.uk/news/world/rss.xml news "~BBC" "!hidden"
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml news "~NYTimes" "!hidden"
+http://feeds.feedburner.com/realclearpolitics/qlMj news politics "~Real Clear" "!hidden"
+https://www.therage.co/rss/ news finance "~The Rage" "!hidden" # lolas news
 
 # Status Pages
 https://status.aws.amazon.com/rss/all.rss status "~AWS Status" "!hidden"

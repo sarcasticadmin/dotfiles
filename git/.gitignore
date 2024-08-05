@@ -1,2 +1,5 @@
 # if I use git worktree I put them inside the git repo
 .worktree
+.envrc
+.direnv
+.nixos-test-history
