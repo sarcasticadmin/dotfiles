@@ -64,8 +64,10 @@ set ls=2
 " Syntax Toggle
 syntax on
 
-" Enable plugins
-filetype plugin indent on
+" set indenting
+" TODO: this needs work
+set autoindent
+set smartindent
 
 " Automatically create `~/.vim/.tmp directory, writable by the group
 " Move swp and undo to anywhere but the cwd
