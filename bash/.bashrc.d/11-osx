@@ -12,4 +12,8 @@ if [ "${os_platform}" == "Darwin"  ];then
   export BASH_SILENCE_DEPRECATION_WARNING=1
 
   alias flush-dnscache="sudo killall -HUP mDNSResponder"
+
+  # Without this set config and data end up in "$HOME/Library/Application Support/"
+  # at least according to golang: https://pkg.go.dev/os#UserConfigDir
+  export XDG_CONFIG_HOME="${HOME}/.config"
 fi
