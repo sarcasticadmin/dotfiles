@@ -1,0 +1,5 @@
+# ref: https://k9scli.io/topics/config/
+k9s:
+  ui:
+    noIcons: true
+  skipLatestRevCheck: false

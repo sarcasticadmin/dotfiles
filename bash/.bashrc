@@ -128,7 +128,7 @@ export PAGER="less +Gg -R"
 
 # Leave manpage place on screen after exit and set preference to read entire
 # file and start back at the beginning to get percentage info
-export MANPAGER="less -X +Gg"
+export MANPAGER="less +Gg -X -R"
 
 # Color for manpages
 export LESS_TERMCAP_mb=$'\e[1;31m'           # begin bold
@@ -219,9 +219,9 @@ fi
 # Disable stopping flowcontrol
 stty -ixon
 
-if command -v gpg-agent > /dev/null 2>&1; then
-  # gpg-agent stuff
-  if [ ${ENABLE_GPG:-1} -eq 0 ]; then
+# gpg-agent stuff
+if [ ${ENABLE_GPG:-1} -eq 0 ]; then
+  if command -v gpg-agent > /dev/null 2>&1; then
     # Is daemon running?
     if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
       eval $(gpg-agent --daemon)
@@ -232,6 +232,14 @@ if command -v gpg-agent > /dev/null 2>&1; then
 
     ssh_agent_setup
   fi
+# yubikey-agent is an alterantive to the gpg-ageant
+elif command -v yubikey-agent > /dev/null 2>&1; then
+  if ! pgrep -x -u "${USER}" yubikey-agent > /dev/null 2>&1; then
+    mkdir -p ${HOME}/.local/state/yubikey-agent
+    nohup yubikey-agent -l ${HOME}/.local/state/yubikey-agent/agent.socket > ${HOME}/.local/state/yubikey-agent/agent.log 2>&1 &
+  fi
+
+  export SSH_AUTH_SOCK=${HOME}/.local/state/yubikey-agent/agent.socket
 fi
 
 # Start up usb auto mounting if present

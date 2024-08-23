@@ -1,0 +1,6 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+# only set this config if docker doesn't exist
+if (command -v podman && ! command -v docker) > /dev/null 2>&1; then
+  alias docker=podman
+fi
