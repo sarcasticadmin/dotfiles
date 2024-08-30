@@ -3,7 +3,9 @@
 # browser specifics
 if [ -n "$DISPLAY" ]; then
   # shellcheck disable=SC2154
-  if [ "${os_platform}" != "Darwin"  ];then
-    export BROWSER="firefox"
+  if [ "${os_platform}" != "Darwin" ];then
+    export BROWSER="firefox -new-tab"
+  else
+    export BROWSER="open -a \"Google Chrome\""
   fi
 fi
