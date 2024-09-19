@@ -67,6 +67,7 @@ https://status.cloud.google.com/en/feed.atom status "~GCP Status" "!hidden"
 https://www.githubstatus.com/history.rss status "~GitHub Status" "!hidden"
 https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss status "~GitLab Status" "!hidden"
 https://status.slack.com/feed/rss status "~Slack Status" "!hidden"
+https://www.cloudflarestatus.com/history.atom status "~Cloudflare Status" "!hidden"
 
 # HAM
 https://www.zeroretries.org/feed ham "~Zero Retries" "!hidden"
