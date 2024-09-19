@@ -47,8 +47,9 @@
 [alias]
   # commit and fixup
   can     = commit --amend --no-edit
-  # Allow for copy/paste diffs without prefixes
-  pat     = "!f() { git diff --no-prefix $@ ;}; f"
+  # Allow for copy/paste diffs without prefixes and
+  # exclude external diff: https://stackoverflow.com/a/19936510
+  pat     = "!f() { git diff --no-ext-diff $@ ;}; f"
   stats   = shortlog -sn --all --no-merges
   recap   = log master --oneline --no-merges --author=rob@sarcasticadmin.com
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
