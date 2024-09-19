@@ -12,7 +12,7 @@ else
   " without defining this explcitly it will search undesirable paths like:
   " XDG_DATA_DIRS=/run/current-system/sw/share
   " This then can cause vim plug to fail to load plugins
-  call plug#begin($HOME.'/.vim')
+  call plug#begin($HOME.'/.vim/plugged')
 endif
 
 " One plugin encompassing linting and fmting
