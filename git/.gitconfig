@@ -106,3 +106,5 @@
 [clone]
   # "origin" is for forks which I do less often
   defaultRemoteName = upstream
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
