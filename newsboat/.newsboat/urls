@@ -40,6 +40,7 @@ https://www.sovereigntechfund.de/feed.rss tech oss "~Sovereign Tech Fund" "!hidd
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
 https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Announce" "!hidden"
 https://nixpkgs.news/rss.xml tech nix "~Nixpkgs News" "!hidden"
+https://www.liminix.org/feed.xml tech nix wireless "~Liminix News" "!hidden"
 
 # Comics
 http://xkcd.com/rss.xml comics "!xkcd"
