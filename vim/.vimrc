@@ -129,16 +129,18 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_linters_explicit = 1
 " Show available linters and filetype via :ALEInfo
 " Other options via :help ale-options
+" Exclude terraform from ale_linters since 'tf validate' requires 'tf init'
+" and terraform is pretty dumb about locating a provider
+" ref: https://github.com/dense-analysis/ale/blob/a7ef1817b7aa06d0f80952ad530be87ad3c8f6e2/ale_linters/terraform/terraform.vim#L12
 let g:ale_linters = {
 \   'go': ['gofmt'],
 \   'nix': ['nixpkgs-fmt'],
 \   'python': ['flake8'],
 \   'rego': ['opafmt'],
 \   'sh': ['shellcheck'],
-\   'terraform': ['terraform'],
 \}
 
-
+" fmters
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'go': ['gofmt'],
