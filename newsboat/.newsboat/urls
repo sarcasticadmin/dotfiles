@@ -34,6 +34,7 @@ https://www.bleepingcomputer.com/feed/ tech "~Bleeping Comp" "!hidden"
 https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!hidden"
 https://www.eff.org/rss/updates.xml tech security "~EFF" "!hidden"
 https://www.sovereigntechfund.de/feed.rss tech oss "~Sovereign Tech Fund" "!hidden"
+https://www.404media.co/rss tech security law "~404 Media" "!hidden"
 
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
