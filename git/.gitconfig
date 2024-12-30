@@ -21,6 +21,11 @@
   # Allow for marking commit fixups prior to rebase during
   # git commit --fixup
   autoSquash = true
+
+  # leverage stacked branches during rebases
+  # to disable this: use git rebase --no-update-refs
+  # ref: https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+  updateRefs = true
 [branch]
   # sort by most recently used branches instead of alphabetical
   sort = -committerdate
