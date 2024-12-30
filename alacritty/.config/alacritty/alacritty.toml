@@ -1,4 +1,5 @@
 # Starting in alacritty v0.13.0 .toml is for config files
+[general]
 # Live config reload (changes require restart)
 live_config_reload = false
 

@@ -138,6 +138,7 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'rego': ['opafmt'],
 \   'sh': ['shellcheck'],
+\   'rust': ['analyzer'],
 \}
 
 " fmters

@@ -1,0 +1,6 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+# glab cli specifics
+if command -v glab > /dev/null 2>&1; then
+  alias gl="glab"
+fi
