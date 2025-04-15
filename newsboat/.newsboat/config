@@ -51,3 +51,9 @@ browser "${BROWSER:-firefox -new-tab} %u"
 # Format UI
 feedlist-format     "%11u %t"
 articlelist-format  "%4i %f %D  %?T?|%-16T|  ?%t"
+# First menu
+feedlist-title-format "%N %V"
+# Tag article menu
+articlelist-title-format "%N %V - %T"
+# Individual Article menu
+itemview-title-format "%N %V - %T"
