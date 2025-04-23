@@ -35,12 +35,12 @@ https://www.freebsd.org/events/feed.xml tech freebsd events "~FreeBSD Events" "!
 https://www.eff.org/rss/updates.xml tech security "~EFF" "!hidden"
 https://www.sovereigntechfund.de/feed.rss tech oss "~Sovereign Tech Fund" "!hidden"
 https://www.404media.co/rss tech security law "~404 Media" "!hidden"
+https://chaos.social/@birkenhack.rss tech hacking "~Birkenhack" "!hidden"
 
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
 https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Announce" "!hidden"
-https://nixpkgs.news/rss.xml tech nix "~Nixpkgs News" "!hidden"
 https://www.liminix.org/feed.xml tech nix wireless "~Liminix News" "!hidden"
 
 # Comics
@@ -87,6 +87,7 @@ https://groups.io/g/APRS/rss ham aprs "~APRS" "!hidden"
 https://www.kb6nu.com/feed/ ham individual "~Dan KB6NU" "!hidden"
 https://daily.hamweekly.com/atom.xml ham "~HAM Radio Daily" "!hidden"
 https://www.arnewsline.org/?format=rss ham "~AR Newsline" "!hidden"
+"filter:~/.newsboat/filters/atom-rm-published-tag.sh:https://daily.hamweekly.com/atom.xml" ham "~Ham Weekly" "!hidden"
 
 # Query Aggregators
 # https://newsboat.org/releases/2.10.2/docs/newsboat.html#available-comparison-operators
