@@ -41,7 +41,6 @@ https://chaos.social/@birkenhack.rss tech hacking "~Birkenhack" "!hidden"
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
 https://discourse.nixos.org/c/events/13.rss tech nix "~Nix Disco Events" "!hidden"
 https://discourse.nixos.org/c/announcements/8.rss tech nix "~Nix Disco Announce" "!hidden"
-https://nixpkgs.news/rss.xml tech nix "~Nixpkgs News" "!hidden"
 https://www.liminix.org/feed.xml tech nix wireless "~Liminix News" "!hidden"
 
 # Comics
