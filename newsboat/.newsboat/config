@@ -6,6 +6,7 @@ color info                yellow  blue   bold
 color article             white   black
 
 highlight-article "feedtitle =~ \"Webshit Weekly\"" green default bold
+highlight-article "feedtitle =~ \"Birkenhack\"" green default bold
 highlight-article "tags =~ \"security\"" red default bold
 highlight-article "tags =~ \"dtrace\"" green default bold
 highlight-article "tags =~ \"reproducibility\"" green default bold
