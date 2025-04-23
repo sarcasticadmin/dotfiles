@@ -34,6 +34,8 @@ goto-next-feed no
 # No Reload on start but autoreload after xx min
 suppress-first-reload yes
 auto-reload yes
+# in seconds
+download-timeout 10
 reload-time 30
 reload-threads 4
 # The most import setting of them all since I use query feeds exclusively makes sure to use the prepopulate cached feeds
