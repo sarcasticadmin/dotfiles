@@ -92,6 +92,7 @@ https://www.kb6nu.com/feed/ ham individual "~Dan KB6NU" "!hidden"
 https://daily.hamweekly.com/atom.xml ham "~HAM Radio Daily" "!hidden"
 https://www.arnewsline.org/?format=rss ham "~AR Newsline" "!hidden"
 "filter:~/.newsboat/filters/atom-rm-published-tag.sh:https://daily.hamweekly.com/atom.xml" ham "~Ham Weekly" "!hidden"
+https://k9zw.wordpress.com/feed/ ham "~Varying Freq K9ZW" "!hidden"
 
 # Query Aggregators
 # https://newsboat.org/releases/2.10.2/docs/newsboat.html#available-comparison-operators
