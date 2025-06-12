@@ -1,5 +1,8 @@
 # ref: https://k9scli.io/topics/config/
+#
+# show current config: k9s info
 k9s:
   ui:
     noIcons: true
-  skipLatestRevCheck: false
+    logoless: true
+  skipLatestRevCheck: true
