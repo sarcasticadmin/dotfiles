@@ -58,7 +58,7 @@
   stats   = shortlog --summary --numbered --no-merges
   recap   = "!f() { git log ${1:-master} --oneline --no-merges --author=$(git config user.email) ;}; f"
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-  today   = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
+  today   = "!f() { git log --since=00:00:00 --all --no-merges --oneline --author=$(git config user.email) ;}; f"
   graph   = log --graph --all --decorate --stat --date=iso
   root    = rev-parse --show-toplevel
   ignore  = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
