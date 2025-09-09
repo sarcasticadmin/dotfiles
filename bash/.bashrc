@@ -232,7 +232,7 @@ if [ ${ENABLE_GPG:-1} -eq 0 ]; then
 
     ssh_agent_setup
   fi
-# yubikey-agent is an alterantive to the gpg-ageant
+# yubikey-agent is an alterantive to the gpg-agent
 elif command -v yubikey-agent > /dev/null 2>&1; then
   if ! pgrep -x -u "${USER}" yubikey-agent > /dev/null 2>&1; then
     mkdir -p ${HOME}/.local/state/yubikey-agent

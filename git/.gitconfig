@@ -55,16 +55,17 @@
   # Allow for copy/paste diffs without prefixes and
   # exclude external diff: https://stackoverflow.com/a/19936510
   pat     = "!f() { git diff --no-ext-diff $@ ;}; f"
-  stats   = shortlog -sn --all --no-merges
-  recap   = log master --oneline --no-merges --author=rob@sarcasticadmin.com
+  stats   = shortlog --summary --numbered --no-merges
+  recap   = "!f() { git log ${1:-master} --oneline --no-merges --author=$(git config user.email) ;}; f"
   recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-  today   = log --since=00:00:00 --all --no-merges --oneline --author=rob@sarcasticadmin.com
+  today   = "!f() { git log --since=00:00:00 --all --no-merges --oneline --author=$(git config user.email) ;}; f"
   graph   = log --graph --all --decorate --stat --date=iso
   root    = rev-parse --show-toplevel
   ignore  = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
   stale  = "!f() { \
-      remote=${1-upstream}; \
-      git branch -r --merged $remote/master | grep $remote | grep -v '>' | grep -v master | xargs -L1 | cut -d\"/\" -f2-;\
+    remote=${1:-upstream}; \
+    branch=${2:-master}; \
+    git branch -r --merged $remote/$branch | grep $remote | grep -v '>' | grep -v $branch | xargs -L1 | cut -d\"/\" -f2-;\
     }; f"
   license = "!gl() { \
     if [ -z $@ ];then \
