@@ -3,3 +3,5 @@
 .envrc
 .direnv
 .nixos-test-history
+
+.DS_Store

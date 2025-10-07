@@ -73,7 +73,8 @@ https://www.cloudflarestatus.com/history.atom status "~Cloudflare Status" "!hidd
 https://status.datadoghq.com/history.atom status "~Datadog US1" "!hidden"
 https://status.us3.datadoghq.com/history.atom status "~Datadog US3" "!hidden"
 https://status.us5.datadoghq.com/history.atom status "~Datadog US3" "!hidden"
-https://datadogintegrations.statuspage.io/history.atom "~Datadog Intg" "!hidden"
+https://datadogintegrations.statuspage.io/history.atom status "~Datadog Intg" "!hidden"
+https://www.dockerstatus.com/pages/533c6539221ae15e3f000031/rss status "~Dockerhub" "!hidden"
 
 # HAM
 https://www.zeroretries.org/feed ham "~Zero Retries" "!hidden"

@@ -1,0 +1,7 @@
+# shellcheck disable=SC2148
+# vi:filetype=sh
+# ripgrep specifics
+if command -v rg > /dev/null 2>&1; then
+  # .hidden files need to always be included
+  alias rg='rg --hidden'
+fi
