@@ -1,11 +1,9 @@
 # shellcheck disable=SC2148
 # vi:syntax=sh
 # browser specifics
-if [ -n "$DISPLAY" ]; then
-  # shellcheck disable=SC2154
-  if [ "${os_platform}" != "Darwin" ];then
-    export BROWSER="firefox -new-tab"
-  else
-    export BROWSER="open -a \"Google Chrome\""
-  fi
+# shellcheck disable=SC2154
+if [ "${os_platform}" == "Darwin" ];then
+  export BROWSER="open -a 'Google Chrome'"
+elif [ -n "$DISPLAY" ]; then
+  export BROWSER="firefox -new-tab"
 fi

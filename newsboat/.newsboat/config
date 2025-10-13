@@ -52,7 +52,7 @@ keep-articles-days 14
 # Launch browser
 # default to browser set via BROWSER if not set
 # then default to firefox
-browser "${BROWSER:-firefox -new-tab} %u"
+browser "eval \"${BROWSER:-firefox -new-tab}\" %u"
 
 # Format UI
 feedlist-format     "%11u %t"
