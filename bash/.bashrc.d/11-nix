@@ -5,7 +5,4 @@ if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
   # shellcheck disable=SC1090
   . "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
-nix-sha(){
-  nix-prefetch-url --unpack https://github.com/"$1"/archive/"$2".tar.gz
-}
 fi
