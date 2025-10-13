@@ -1,8 +1,9 @@
 # shellcheck disable=SC2148
 # vi:syntax=sh
 # Nix Goodness
-if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
-  # shellcheck disable=SC1090
-  . "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
+# Will only exist on non-NixOS machines
+if [ -e '/etc/profile.d/nix.sh' ]; then
+  # shellcheck source=/dev/null
+  . '/etc/profile.d/nix.sh'
 fi
