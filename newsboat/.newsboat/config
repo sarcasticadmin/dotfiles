@@ -46,6 +46,9 @@ reload-threads 4
 # ref: https://github.com/newsboat/newsboat/issues/1408
 prepopulate-query-feeds yes
 
+# ignore feed articles that are in the future
+ignore-article "*" "age < 0"
+
 # Clean up
 keep-articles-days 14
 
