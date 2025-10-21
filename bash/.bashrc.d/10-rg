@@ -2,6 +2,9 @@
 # vi:filetype=sh
 # ripgrep specifics
 if command -v rg > /dev/null 2>&1; then
-  # .hidden files need to always be included
-  alias rg='rg --hidden'
+  # --hidden: hidden files need to always be included
+  #
+  # --smart-case: searches case insensitively if the pattern
+  # is all lowercase. Otherwise, ripgrep will search case sensitively
+  alias rg='rg --hidden --smart-case'
 fi
