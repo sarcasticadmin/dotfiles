@@ -194,13 +194,15 @@ if [ "$TERM" != "256color" ]; then
   fi
 
   if [[ ${EUID} == 0 ]]; then
+    # bold 16-color red prompt
     PS1='\[\033[01;31m\]\h\[\033[01;37m\] \W \$\[\033[00m\] '
   else
-    # Exclude username in PS1 when not connected via SSH
+    # bold 256-color orange prompt
+    # exclude username in PS1 when not connected via SSH
     if [ "${SSH_TTY}" ]; then
-      PS1='\[\033[01;36m\]\u@\h\[\033[01;37m\] \W \$\[\033[00m\] '
+      PS1='\[\033[1;38;5;208m\]\u@\h\[\033[01;37m\] \W \$\[\033[00m\] '
     else
-      PS1='\[\033[01;36m\]\h\[\033[01;37m\] \W \$\[\033[00m\] '
+      PS1='\[\033[1;38;5;208m\]\h\[\033[01;37m\] \W \$\[\033[00m\] '
     fi
   fi
 
