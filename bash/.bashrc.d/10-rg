@@ -6,5 +6,5 @@ if command -v rg > /dev/null 2>&1; then
   #
   # --smart-case: searches case insensitively if the pattern
   # is all lowercase. Otherwise, ripgrep will search case sensitively
-  alias rg='rg --hidden --smart-case'
+  alias rg="rg --hidden --smart-case -g '!.git/'"
 fi
