@@ -1,3 +1,4 @@
-[component_manager]
-disable_update_check = true
+[core]
+account = robert.hernandez@xolv.com
+project = xplorer-admin-dev
 

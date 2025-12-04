@@ -50,3 +50,35 @@ TERM = "xterm-256color"
 
 [font]
 size = 13.0
+
+[selection]
+save_to_clipboard = true
+#[mouse]
+#bindings = [
+#  { mouse = "Middle", action = "Paste" }
+#]
+# Workaround for OSX to allow the correct bash to start and
+# it start without a login shell
+[terminal.shell]
+program = "/run/current-system/sw/bin/bash"
+
+#[keyboard]
+#bindings = [
+#  { key = "C", mods = "Command", chars = "\u0003" },
+#]
+#args = [""] 
+#[font.bold]
+#family = "ProFont"
+#style = "Bold"
+
+#[font.bold_italic]
+#family = "ProFont"
+#style = "Bold Italic"
+
+#[font.italic]
+#family = "ProFont"
+#style = "Italic"
+
+#[font.normal]
+#family = "ProFont"
+#style = "Regular"
