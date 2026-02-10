@@ -36,6 +36,7 @@ https://www.eff.org/rss/updates.xml tech security "~EFF" "!hidden"
 https://www.sovereigntechfund.de/feed.rss tech oss "~Sovereign Tech Fund" "!hidden"
 https://www.404media.co/rss tech security law "~404 Media" "!hidden"
 https://chaos.social/@birkenhack.rss tech hacking "~Birkenhack" "!hidden"
+https://redmonk.com/latest-research/feed tech research "~Redmonk" "!hidden"
 
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134

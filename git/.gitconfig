@@ -91,6 +91,8 @@
     }; f"
   tagtype = "for-each-ref refs/tags"
   semver = "!f() { git tag | sort -V;}; f"
+  # recycle old message during rebase, edit, reset --soft
+  commit-reuse = "commit -C ORIG_HEAD"
 [lfs]
   # Ignore excessive nagging: "Locking support detected on remote "origin". Consider enabling it with:"
   locksverify = false
