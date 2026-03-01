@@ -20,6 +20,7 @@ groups:
   - name: indexs
     watchlist:
       - ^GSPC # S&P500
+      - ^TNX # 10 yr treasury note
       - VFIAX # Vanguard S&P 500 Index
       - VBTLX # Vanguard Total Bond Market Index
       - SWPPX # Schwab S&P 500 Index
