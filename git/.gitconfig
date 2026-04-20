@@ -82,7 +82,7 @@
   # Quickly create a branch thats unique. Add a suffix to make it standout if needed
   # Date is prefixed for easy sorting with git branch
   checkout-date = "!f() { \
-      bn=$(printf -- 'rh/%s%s' $(date +%s) $1); \
+      bn=$(printf -- 'rh/%s%s' $(date -u +\"%y%m%d%H%M%S\") $1); \
       git checkout -b ${bn}; \
     }; f"
   fixup = "!f() { \
