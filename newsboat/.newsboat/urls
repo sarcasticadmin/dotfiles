@@ -50,7 +50,9 @@ https://www.liminix.org/feed.xml tech nix wireless "~Liminix News" "!hidden"
 http://xkcd.com/rss.xml comics "!xkcd"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
-https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
+# Stopped the bulk of its publishing ~2022
+# ref: https://www.commitstrip.com/en/2024/08/27/hello-world/?
+#https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
 https://www.monkeyuser.com/index.xml comics "!MonkeyUser"
 https://turnoff.us/feed.xml comics "!Turnoff"
 https://patchfriday.com/rss.xml comics "!PatchFriday"
