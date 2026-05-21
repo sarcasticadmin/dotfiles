@@ -39,6 +39,8 @@ https://chaos.social/@birkenhack.rss tech hacking "~Birkenhack" "!hidden"
 https://redmonk.com/latest-research/feed tech research "~Redmonk" "!hidden"
 # https://github.com/Olshansk/rss-feeds
 https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_red.xml tech ai security "~Anthropic Red" "!hidden"
+https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml tech ai vendor "~Anthropic News" "!hidden"
+https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml tech ai research "~Anthropic Research" "!hidden"
 
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
