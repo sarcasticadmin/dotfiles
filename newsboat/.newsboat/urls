@@ -39,6 +39,8 @@ https://chaos.social/@birkenhack.rss tech hacking "~Birkenhack" "!hidden"
 https://redmonk.com/latest-research/feed tech research "~Redmonk" "!hidden"
 # https://github.com/Olshansk/rss-feeds
 https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_red.xml tech ai security "~Anthropic Red" "!hidden"
+https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml tech ai vendor "~Anthropic News" "!hidden"
+https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml tech ai research "~Anthropic Research" "!hidden"
 
 # Getting discourse rss feeds
 # src: https://meta.discourse.org/t/discourse-rss-feeds-list/264134
@@ -50,7 +52,9 @@ https://www.liminix.org/feed.xml tech nix wireless "~Liminix News" "!hidden"
 http://xkcd.com/rss.xml comics "!xkcd"
 http://www.phdcomics.com/gradfeed.php comics "!PHD"
 http://feeds.feedburner.com/GeekAndPoke comics "!Geek&Poke"
-https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
+# Stopped the bulk of its publishing ~2022
+# ref: https://www.commitstrip.com/en/2024/08/27/hello-world/?
+#https://www.commitstrip.com/en/feed/ comics "!CommitStrip"
 https://www.monkeyuser.com/index.xml comics "!MonkeyUser"
 https://turnoff.us/feed.xml comics "!Turnoff"
 https://patchfriday.com/rss.xml comics "!PatchFriday"
