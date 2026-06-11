@@ -51,6 +51,8 @@ ignore-article "*" "age < 0"
 
 # Clean up
 keep-articles-days 14
+# if feeds/urls change its ok to cleanup stale refs
+cleanup-on-quit yes
 
 # Launch browser
 # default to browser set via BROWSER if not set
