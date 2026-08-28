@@ -114,3 +114,9 @@
 [clone]
   # "origin" is for forks which I do less often
   defaultRemoteName = upstream
+
+# example:
+#   git commit -m "Fix off-by-one in parser" \
+#     --trailer "assist:Claude (Claude Sonnet 5)"
+[trailer "assist"]
+  key = "Assisted-by: "
