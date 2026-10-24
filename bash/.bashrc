@@ -33,18 +33,22 @@ fingerprints() {
   ssh-keygen -l -E sha256 -f $keyfile
 }
 
-# Make sure ssh uses the right socket
-ssh_agent_setup() {
-  # If we are comming from ssh and are forwarding an agent
-  # then move on
+# are we currently forwarding the ssh-agent?
+ssh_agent_forwarded() {
+  # check if we are comming from ssh and are forwarding an agent
   if [ "${SSH_TTY}" ] && [ "${SSH_AUTH_SOCK}" ]; then
-    # do nothing
-    return
+    return 0
   else
-    # "New" fancy way of detecting agent socket
-    # Seems to work as far back as gpg v2.2.3 (tested on OSX)
-    # https://github.com/drduh/YubiKey-Guide#replace-agents
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    return 1
+  fi
+}
+
+repoint_tmuxed_ssh_agent() {
+  # Fix SSH agent forwarding in tmux when reattaching to prev
+  # session
+  # ref: https://gist.github.com/eginez/f5b70a895328f6948b940fb8568d1e3f
+  if [ -n "$TMUX" ]; then
+    eval $(tmux show-environment -s SSH_AUTH_SOCK)
   fi
 }
 
@@ -221,8 +225,14 @@ fi
 # Disable stopping flowcontrol
 stty -ixon
 
-# gpg-agent stuff
-if [ ${ENABLE_GPG:-1} -eq 0 ]; then
+if ssh_agent_forwarded; then
+  # new panes will get appropriate SSH_AUTH_SOCK
+  repoint_tmuxed_ssh_agent
+  # ensure to repoint SSH_AUTH_SOCK for all
+  # existing panes if/when ssh-add is called
+  alias ssh-add='repoint_tmuxed_ssh_agent;ssh-add'
+# local gpg-agent or yubikey-agent
+elif [ ${ENABLE_GPG:-1} -eq 0 ]; then
   if command -v gpg-agent > /dev/null 2>&1; then
     # Is daemon running?
     if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
@@ -231,8 +241,10 @@ if [ ${ENABLE_GPG:-1} -eq 0 ]; then
     # gpg pinentry
     GPG_TTY=$(tty)
     export GPG_TTY
-
-    ssh_agent_setup
+    # "New" fancy way of detecting agent socket
+    # Seems to work as far back as gpg v2.2.3 (tested on OSX)
+    # https://github.com/drduh/YubiKey-Guide#replace-agents
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   fi
 # yubikey-agent is an alterantive to the gpg-agent
 elif command -v yubikey-agent > /dev/null 2>&1; then
