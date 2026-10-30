@@ -13,7 +13,7 @@ $(HOME)/.config:
 
 stow: $(HOME)/bin $(HOME)/.config
 .for pkg in $(PKGS)
-	$(STOW) -R $(pkg)
+	$(STOW) --no-folding -R $(pkg)
 .endfor
 
 unstow:
