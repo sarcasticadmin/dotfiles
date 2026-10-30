@@ -7,5 +7,6 @@ git
 gnureadline
 mariadb
 ruby
+ssh
 tmux
 vim

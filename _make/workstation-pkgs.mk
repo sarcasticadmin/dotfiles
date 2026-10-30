@@ -17,6 +17,7 @@ newsboat
 pyenv
 rbenv
 ruby
+ssh
 terraform
 ticker
 tmux

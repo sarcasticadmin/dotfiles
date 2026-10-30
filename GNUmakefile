@@ -11,7 +11,7 @@ $(HOME)/.config:
 	mkdir -p ${HOME}/.config
 
 stow: $(HOME)/bin $(HOME)/.config
-	$(foreach pkg, $(PKGS), $(STOW) -R $(pkg);)
+	$(foreach pkg, $(PKGS), $(STOW) --no-folding -R $(pkg);)
 
 unstow:
 	$(foreach pkg, $(PKGS), $(STOW) -D $(pkg);)

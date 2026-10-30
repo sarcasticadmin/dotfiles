@@ -1,0 +1,5 @@
+# # vi:syntax=sh
+
+# Ensure neccessary SSH dirs exist and are  private
+# ~/.ssh/config assumes these paths exist
+[[ -d ~/.ssh/control && -d ~/.ssh/config.d ]] || (umask 077; mkdir -p ~/.ssh/control ~/.ssh/config.d)

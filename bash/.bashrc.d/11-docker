@@ -19,6 +19,11 @@ if command -v docker > /dev/null 2>&1; then
     docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$id"
   }
 
+  # anything currently running on the daemon will be stopped
+  docker-stopall() {
+    docker stop $(docker ps -q)
+  }
+
   # Override config.json for things like ps format
   if [ -d "${HOME}"/.docker.d ];then
     export DOCKER_CONFIG="${HOME}/.docker.d"
